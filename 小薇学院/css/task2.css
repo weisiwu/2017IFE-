@@ -1,0 +1,159 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+nav {
+	width: 100%;
+	height: 57px;
+	background: #000;
+}
+.navIcon {
+	width: 146px;
+	height: 57px;
+	float: left;
+	margin-left: 50px;
+	background: url(../images/task2-1.png) no-repeat;
+}
+nav ul {
+	overflow: hidden;
+	width: 600px;
+	float: right;
+	line-height: 57px;
+}
+nav li {
+	float: left;
+	color: #fff;
+	width: 150px;
+	list-style: none;
+}
+nav li:before {
+	content: "\02022";
+	color: red;
+}
+nav li:nth-last-child(1) {
+	color: gray;
+}
+.container {
+	width: 100%;
+	height: 100%;
+	background: #dedede;
+}
+
+article {
+	width: 90%;
+	margin-left: 5%;
+	margin-bottom: 20px;
+	background: #fff;
+	padding: 20px;
+	font-size: 18px;
+	line-height: 22px;
+}
+article h1 {
+	font-weight: bold;
+	font-size: 30px;
+	margin: 20px 0px;
+}
+article h2 {
+	color: #737272;
+	margin: 10px 0px;
+}
+article .titleIntro {
+	color: #737272;
+	text-indent: 5px;
+}
+article .first {
+	text-indent: 2rem;
+}
+article img {
+	margin: 20px 0px;
+}
+article:nth-child(2) ul {
+	list-style: none;
+	margin-left: 20px;
+}
+article section {
+	width: 100px;
+	height: 100px;
+	margin: 20px 0px 20px 20px;
+	border: 1px solid gray;
+}
+article section p {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+article section img {
+	width: 80px;
+	margin: 10px 10px;
+}
+article:nth-child(4) ol {
+	margin: 20px 0px 20px 60px;
+	font-weight: bold;
+}
+article .black {
+	font-weight: bold;
+}
+table {
+	width: 100%;
+	border-collapse: collapse;  
+	border: none;
+}
+th {
+	color: #fff;
+	background: #000;
+}
+th,td {
+	border: 1px solid gray;
+}
+table tr:nth-child(6) td {
+	background: gray;
+}
+td {
+	background: #fff;
+} 
+.xxx {
+	border-left: 5px solid gray;
+	border-radius: 1px;
+	text-indent: 20px;
+	line-height: 50px;
+	height: 50px; 
+}
+.fl {
+	width: 68%;
+	float: right;
+	text-align: left;
+}
+.radio.fl {
+	width: 30%;
+}
+.checkbox.fr {
+	width: 5%;
+}
+.fr {
+	width: 30%;
+	float: left;
+	text-align: right;
+}
+input[type=submit] {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	background: blue;
+	color: #fff;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+color: #636363; 
+}
+textarea {
+	height: 6rem;
+	margin-bottom: 10px;
+}
+.copyRight {
+	width: 100%;
+	height: 100px;
+	line-height: 70px;
+	color: #fff;
+	text-align: center;
+}
