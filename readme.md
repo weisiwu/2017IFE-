@@ -30,3 +30,9 @@
 5. 清除浮动相关知识再复习  
 6. [BFC 概念复习](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context)  
 7. 为什么 overflow: hidden 可以清除浮动  
+
+
+### [任务四](https://weisiwu.github.io/2017IFE-/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/task4.html)  
+完成: 2017年3月1日20:31:08  
+
+PS: 因为是经常用到的,所以没有备注.  
