@@ -1,3 +1,7 @@
+* {
+	margin: 0;
+	padding: 0;
+}
 .container {
 	width: 100%;
 	overflow: hidden;
@@ -6,10 +10,10 @@
 }
 .teamName {
 	border: 1px solid #999;
-	margin: 20px;
 	width: 200px;
-	float: left;
-	margin-left: -100%;
+	position: absolute;
+	left: 20px;
+	top: 20px;
 	background: #fff;
 }
 .teamName .logo {
@@ -26,18 +30,19 @@
 .teamIntro {
 	border: 1px solid #999;
 	width: auto;
-	margin: 0px 140px 0px 220px;
+	margin: 20px 160px 20px 240px;
 	background: #fff;
 }
 .teamIntro p {
 	padding: 10px 20px;
 }
 .teamLogo {
-	float: left;
+	position: absolute;
+	top: 20px;
+	right: 20px;
 	border: 1px solid #999;
 	height: 450px;
 	width: 120px;
-	margin-left: -125px;
 	background: #fff;
 }
 .teamLogo div {
@@ -55,8 +60,4 @@
 	height: 20px;
 	text-align: center;
 	width: 100%;
-}
-.teamInfoCon {
-	width: 100%;
-	float: left;
 }
