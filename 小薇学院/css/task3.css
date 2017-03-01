@@ -1,0 +1,62 @@
+.container {
+	width: 100%;
+	overflow: hidden;
+	background: #eee;
+	border: 1px solid #999;
+}
+.teamName {
+	border: 1px solid #999;
+	margin: 20px;
+	width: 200px;
+	float: left;
+	margin-left: -100%;
+	background: #fff;
+}
+.teamName .logo {
+	border: 1px solid #999;
+	float: left;
+	height: 80px; 
+	width: 80px;
+	margin: 20px;
+	background: #eee;
+}
+.teamName p {
+	float: left;
+}
+.teamIntro {
+	border: 1px solid #999;
+	width: auto;
+	margin: 0px 140px 0px 220px;
+	background: #fff;
+}
+.teamIntro p {
+	padding: 10px 20px;
+}
+.teamLogo {
+	float: left;
+	border: 1px solid #999;
+	height: 450px;
+	width: 120px;
+	margin-left: -125px;
+	background: #fff;
+}
+.teamLogo div {
+	border: 1px solid #999;
+	width: 80px;
+	height: 80px;
+	margin: 20px;
+	background: #eee;
+}
+.teamLogo div span {
+	display: inline-block;
+	position: relative;
+	top: 20px;
+	line-height: 20px;
+	height: 20px;
+	text-align: center;
+	width: 100%;
+}
+.teamInfoCon {
+	width: 100%;
+	float: left;
+}
