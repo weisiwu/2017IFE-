@@ -2,8 +2,8 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>task 2</title>
-	<link rel="stylesheet" type="text/css" href="css/task2.css">
+	<title>task 5</title>
+	<link rel="stylesheet" type="text/css" href="css/task5.css">
 </head>
 <body>
 	<nav>
@@ -48,7 +48,7 @@
 				<li>列表项目三</li>
 			</ul>
 		</article>
-		<article>
+		<article id="gallery">
 			<h3>图片</h3>
 			<section>
 				<p>好看的图片</p>
@@ -133,23 +133,57 @@
 				</tr>
 			</table>
 		</article>
-		<article>
-			<p class="xxx black">这里以后是一个侧栏，这是侧栏的标题</p>
-			<label  class="fr" for="input1">请输入邮箱地址</label><input  class="fl" type="text" id="input1" placeholder="这是一个文本输入框">
-			<br>
-			<p class="fl">邮箱地址请按照要求格式输入</p>
-			<br>
-			<label  class="fr" for="input2">请输入密码</label><input id="input2"  class="fl" type="password" value="123456" placeholder="这是一个文本输入框">
-			<br><label  class="fr" for="input3">请重复输入密码</label><input  class="fl" id="input3" type="password" value="123456" placeholder="这是一个文本输入框"><br>
-			<p  class="fl">密码为6-16为英文数字</p>
-			<br>
-			<span class="fr">性别：</span><label  class="fl radio"><input type="radio" name="test" value="男">男</label><label  class="fl radio"><input type="radio" name="test" value="女">女</label><br> <label><span  class="fr">城市</span><select  class="fl">
+	</div>
+	<article class="rightSec">
+		<p class="unknow black">这里以后是一个侧栏，这是侧栏的标题</p>
+		<label  class="fr" for="input1">请输入邮箱地址</label>
+		<input  class="fl" type="text" id="input1" placeholder="这是一个文本输入框">
+		<br>
+		<p class="fl">邮箱地址请按照要求格式输入</p>
+		<br>
+		<label  class="fr" for="input2">请输入密码</label>
+		<input id="input2"  class="fl" type="password" value="123456" placeholder="这是一个文本输入框">
+		<br>
+		<label  class="fr" for="input3">请重复输入密码</label>
+		<input  class="fl" id="input3" type="password" value="123456" placeholder="这是一个文本输入框">
+		<br>
+		<p  class="fl">密码为6-16为英文数字</p>
+		<br>
+		<span class="fr">性别：</span>
+		<label  class="fl radio">
+			<input type="radio" name="test" value="男" checked="1">男
+		</label>
+		<label  class="fl radio">
+			<input type="radio" name="test" value="女">女
+		</label>
+		<br> 
+		<label>
+			<span  class="fr">城市</span>
+			<select  class="fl">
 				<option>北京</option>
 				<option>舒城</option>
 				<option>安徽</option>
-			</select></label><br><span  class="fr">爱好：</span><label  class="fr checkbox"><input type="checkbox" name="test1">运动</label><label  class="fr checkbox"><input type="checkbox" name="test1">艺术</label><label  class="fr checkbox"><input type="checkbox" name="test1">科学</label><br><label><span  class="fr">个人描述</span><textarea  class="fl checkbox" placeholder="这是一个多行输入框,输入您的个人描述"></textarea></label><br><input type="submit" name="" value="确认提交">
-		</article>
-	</div>
+			</select>
+		</label>
+		<br>
+		<span  class="fr">爱好：</span>
+		<label  class="fr checkbox">
+			<input type="checkbox" name="test1">运动
+		</label>
+		<label  class="fr checkbox">
+			<input type="checkbox" name="test1">艺术
+		</label>
+		<label  class="fr checkbox">
+			<input type="checkbox" name="test1">科学
+		</label>
+		<br>
+		<label>
+			<span  class="fr">个人描述</span>
+			<textarea  class="fl checkbox" placeholder="这是一个多行输入框,输入您的个人描述"></textarea>
+		</label>
+		<br>
+		<input type="submit" name="" value="确认提交">
+	</article>
 	<p class="copyRight">版权所有&copy;</p>
 </body>
 </html>

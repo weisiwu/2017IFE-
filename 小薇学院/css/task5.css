@@ -2,17 +2,13 @@
 	margin: 0;
 	padding: 0;
 }
+body {
+	background: #dedede;
+}
 nav {
 	width: 100%;
 	height: 57px;
 	background: #000;
-}
-.navIcon {
-	width: 146px;
-	height: 57px;
-	float: left;
-	margin-left: 50px;
-	background: url(../images/task2-1.png) no-repeat;
 }
 nav ul {
 	overflow: hidden;
@@ -33,12 +29,6 @@ nav li:before {
 nav li:nth-last-child(1) {
 	color: gray;
 }
-.container {
-	width: 100%;
-	height: 100%;
-	background: #dedede;
-}
-
 article {
 	width: 90%;
 	margin-left: 5%;
@@ -65,6 +55,7 @@ article .first {
 	text-indent: 2rem;
 }
 article img {
+	width: 70%;
 	margin: 20px 0px;
 }
 article:nth-child(2) ul {
@@ -112,8 +103,36 @@ table tr:nth-child(6) td {
 }
 td {
 	background: #fff;
+}
+input[type=submit] {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	background: blue;
+	color: #fff;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+	color: #636363; 
+}
+textarea {
+	height: 6rem;
+	margin-bottom: 10px;
+}
+
+.navIcon {
+	width: 146px;
+	height: 57px;
+	float: left;
+	margin-left: 50px;
+	background: url(../images/task2-1.png) no-repeat;
+}
+.container {
+	height: 100%;
+	background: #dedede;
+	margin: 20px auto;
+	margin-right: 450px;
 } 
-.xxx {
+.unknow {
 	border-left: 5px solid gray;
 	border-radius: 1px;
 	text-indent: 20px;
@@ -129,26 +148,12 @@ td {
 	width: 30%;
 }
 .checkbox.fr {
-	width: 5%;
+	width: 15%;
 }
 .fr {
 	width: 30%;
 	float: left;
 	text-align: right;
-}
-input[type=submit] {
-	width: 100%;
-	height: 50px;
-	line-height: 50px;
-	background: blue;
-	color: #fff;
-}
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
-color: #636363; 
-}
-textarea {
-	height: 6rem;
-	margin-bottom: 10px;
 }
 .copyRight {
 	width: 100%;
@@ -157,4 +162,25 @@ textarea {
 	color: #fff;
 	text-align: center;
 	background: #000;
+}
+.rightSec {
+	position: absolute;
+	right: 20px;
+	top: 77px;
+	width: 350px;
+	height: 550px;
+}
+#gallery {
+	overflow: hidden;
+}
+#gallery section {
+	float: left;
+	width: 30%;
+	height: auto;
+	position: relative;
+}
+#gallery section img {
+	width: 60%;
+	margin: 0px;
+	margin-left: 20%;
 }
