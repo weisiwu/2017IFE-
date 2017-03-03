@@ -1,20 +1,20 @@
 # 2017IFE 技术学院课程笔记
 
-- [小薇学院](#xiaowei)  
+- [小薇学院](#小薇学院)  
 	+ [task1](#xiaoweiTask1)
 	+ [task2](#xiaoweiTask2)
 	+ [task3](#xiaoweiTask3)
 	+ [task4](#xiaoweiTask4)
 	+ [task5](#xiaoweiTask5)
 	+ [task6](#xiaoweiTask6)
-- [斌斌学院](#binbin)  
-- [耀耀学院](#yaoyao)  
-- [商业平台学院](#bus)  
-- [ECharts & WebVR学院](#glvr)  
-- [百度糯米前端技术学院](#nuomi)  
+- [斌斌学院](#斌斌学院)  
+- [耀耀学院](#耀耀学院)  
+- [商业平台学院](#商业平台学院)  
+- [ECharts & WebVR学院](#ECharts & WebVR学院)  
+- [百度糯米前端技术学院](#百度糯米前端技术学院)  
 
-### [小薇学院](#xiaowei)
-#### [任务一](#xiaoweiTask1)  
+### 小薇学院
+#### task1  
 
 [demo](https://weisiwu.github.io/2017IFE-/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/task1.html)  
 完成: 2017年2月27日21:29:13  
@@ -23,7 +23,7 @@
 1. input[type=radio] 如何分组忘记了,如何给其加上文字忘记了.  
 1. 版权符号如何写忘记了: @copy;  
 
-#### [任务二](#xiaoweiTask2)  
+#### task2  
 
 [demo](https://weisiwu.github.io/2017IFE-/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/task2.html)  
 完成: 2017年2月28日13:22:55
@@ -37,7 +37,7 @@
 ```
 1. [placeholder 属性如何修改颜色](http://www.jb51.net/html5/171764.html)  
 
-#### [任务三](#xiaoweiTask3)   
+#### task3   
 
 [demo](https://weisiwu.github.io/2017IFE-/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/task3.html)  
 完成: 2017年3月1日14:28:49    
@@ -50,14 +50,14 @@
 6. [BFC 概念复习](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context)  
 7. 为什么 overflow: hidden 可以清除浮动  
 
-#### [任务四](#xiaoweiTask4)
+#### task4
 
 [demo](https://weisiwu.github.io/2017IFE-/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/task4.html)    
 完成: 2017年3月1日20:31:08  
 
 PS: 因为是经常用到的,所以没有备注.  
 
-#### [任务五](#xiaoweiTask5)
+#### task5
 
 [demo](https://weisiwu.github.io/2017IFE-/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/task5.html)   
 完成: 2017年3月2日21:36:09  
@@ -65,7 +65,7 @@ PS: 因为是经常用到的,所以没有备注.
 PS: 同四,仅仅做了一些简单的格式整理.  
 
 
-#### [任务六](#xiaoweiTask6)
+#### task6
 
 [demo](https://weisiwu.github.io/2017IFE-/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/task6.html)
 完成: 
