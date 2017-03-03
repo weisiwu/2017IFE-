@@ -2,8 +2,8 @@
 
 - [小薇学院](#小薇学院)  
 	+ [task1](#xiaoweiTask1)
-	+ [task2](#xiaoweiTask2)
-	+ [task3](#xiaoweiTask3)
+	+ [task2](#task2)
+	+ [task3](#task3)
 	+ [task4](#xiaoweiTask4)
 	+ [task5](#xiaoweiTask5)
 	+ [task6](#xiaoweiTask6)
