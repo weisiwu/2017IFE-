@@ -1,0 +1,340 @@
+/* 通用CSS */
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "STHeiti"; 
+}
+/* 头部CSS */
+nav {
+	width: 892px;
+	height: 61px;
+	margin: 0 auto;
+	border-bottom: 2px solid #938e8c;
+}
+.navLogo {
+	float: left;
+	width: 110px;
+	height: 61px;
+	background: #d45d5c;
+	color: #fff;
+	line-height: 95px;
+	text-indent: 10px;
+}
+.navDate {
+	float: right;
+	color: #d45d5c;
+	line-height: 95px;
+}
+
+/* 内容CSS */
+/* sectionA */
+.container {
+	width: 892px;
+	margin: 0 auto;
+}
+.sectionA {
+	margin-top: 35px;
+	height: 304px;
+	margin-bottom: 35px;
+}
+.sectionAl {
+	position: relative;
+	float: left;
+	width: 641px;
+}
+.sectionAl .left {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 191px;
+	height: 301px;
+	background: #325843;
+	opacity: .5;
+}
+.sectionAl .right {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 191px;
+	height: 301px;
+	background: #e5b7b7;
+	opacity: .5;
+}
+.sectionAl img {
+	width: 100%;
+}
+.sectionAr {
+	float: right;
+	width: 203px;
+	border-top: 2px solid #cc8091;
+}
+.sectionAr .title {
+	margin-bottom: 28px;
+}
+.sectionAr .title a {
+	color: #000;
+	font-size: 24px;
+	font-family: "Microsoft Yahei";
+	line-height: 40px;
+}
+.sectionAr .title p {
+	font-size: 12px;
+	line-height: 10px;
+	color: #676767;
+	font-family: "STKaiti";
+}
+.sectionAr .content {
+}
+.sectionAr .content span:nth-child(1) {
+	font-size: 116px;
+	line-height: 116px;
+	font-family: "Microsoft Yahei";
+	font-style: italic;
+	color: #75b86b;
+}
+.sectionAr .content span:nth-child(2) {
+	font-family: "Microsoft Yahei";
+	float: left;
+	font-size: 55px;
+	color: #cc8091;
+}
+.sectionAr .content .fr{
+	float: left;
+	margin: 30px 0px 0px 10px;
+}
+.sectionAr .content .fr .p1 {
+	font-family: "Microsoft Yahei";
+	color: #cc8091;
+	font-size: 21px;
+}
+.sectionAr .content .fr .p1 {
+	font-size: 12px;
+	font-family: "Microsoft Yahei";
+	color: #cc8091;
+}
+
+/* sectionB */
+.sectionB {
+	overflow: hidden;
+	position: relative;
+}
+.sectionB a {
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: underline;
+	font-family: "Microsoft Yahei";
+	display: block;
+	margin-bottom: 10px;
+}
+.sectionB .sectionBWhat {
+	position: relative;
+	float: left;
+	width: 230px;
+	font-size: 12px;
+	color: #231815;
+	line-height: 16px;
+	margin-right: 30px;
+}
+.sectionB .sectionBWhat a {
+	color: #418c59;
+}
+.sectionB .sectionBWhen {
+	position: relative;
+	float: left;
+	width: 200px;
+	font-size: 12px;
+	color: #231815;
+	line-height: 16px;
+	margin-right: 30px;
+}
+.sectionB .sectionBWhen a {
+	color: #d3994f;
+}
+.sectionB .sectionBHow {
+	position: relative;
+	float: left;
+	width: 135px;
+	font-size: 12px;
+	color: #231815;
+	line-height: 16px;
+}
+.sectionB .sectionBHow a {
+	color: #cc7480;
+}
+.sectionB .sectionBHow ul {
+	list-style: none;
+	margin-top: 25px;
+}
+.sectionB .sectionBHow li span {
+	color: #cc7480;
+	line-height: 18px;
+	font-style: italic;
+}
+
+/* sectionC */
+.sectionC {
+	overflow: hidden;
+	border-bottom: 1px solid #eee;
+	margin-top: 75px;
+}
+.sectionC .sectionCl {
+	width: 415px;
+	float: left;
+}
+.sectionC .sectionCl .sectionCltitle {
+	width: 100%;
+	border-bottom: 2px solid #10456b;
+}
+.sectionC .sectionCl .sectionCltitle p {
+	color: #11456b;
+	font-family: "STHeiti";
+	font-size: 42px;	
+	font-weight: bold;
+	line-height: 58px;
+}
+.sectionC .sectionCl .sectionCltitle .strong {
+	color: #f5e327;
+	font-family: "STHeiti";
+	font-size: 72px;
+	font-weight: bold;
+	font-style: italic;
+}
+.sectionC .sectionCl .sectionClcontent {
+	width: 100%;
+	font-size: 12px;
+	color: #767777;
+	margin-top: 23px;
+}
+.sectionC .sectionCl .sectionClcontent p {
+	line-height: 16px;
+}
+.sectionC .sectionCl .sectionClcontent img {
+	float: right;
+	padding: 20px 20px 15px 20px;
+}
+.sectionC .sectionCl .sectionClcontent .strong {
+	float: left;
+	color: #f5e327;
+	font-size: 70px;
+	line-height: 70px;
+}
+
+.sectionC .sectionCr {
+	width: 50%;
+	float: right;
+}
+.sectionC .sectionCr .sectionCrtitle {
+	width: 458px;
+	height: 257px;
+	background: url(../images/task6-2.jpg) no-repeat;
+	background-size: cover;
+}
+.sectionC .sectionCr .sectionCrtitle p {
+	position: relative;
+	height: 61px;
+	top: 196px;
+	background: rgba(4, 0, 0, .4);
+	text-indent: 38px;
+	color: #72b16a;
+	font: italic bold 12px/140% "Microsoft Yahei";
+}
+.sectionC .sectionCr .sectionCrtitle .strong {
+	color: #fff;
+	font-size: 26px;
+	border-left: 3px solid #72b16a; 
+	line-height: 61px;
+	font-style: normal;
+	padding: 9px;
+}
+.sectionC .sectionCr .sectionCrcontent {
+	width: 459px;
+	height: 318px;
+	margin-top: 30px;
+	background: #eeedd6;
+}
+.sectionC .sectionCr .sectionCrcontent ul {
+	list-style-image: url(../images/listIcon.jpg);
+	list-style-position: inside;
+	padding: 30px 30px 30px 30px; 
+}
+.sectionC .sectionCr .sectionCrcontent li {
+	line-height: 33px;
+	font-family: "SongTi";
+	color: #5b5b5b;
+	text-align: left;
+}
+.sectionC .sectionCr .sectionCrcontent li span {
+	font-style: italic;
+	text-align: right;
+	font-size: 12px;
+}
+.sectionC .sectionCr .sectionCrcontent .bottom {
+	width: 100%;
+	height: 160px;
+	overflow: hidden;
+	color: #fff;
+}
+.sectionC .sectionCr .sectionCrcontent .bottom .fl {
+	float: left;
+	width: 260px;
+	height: 160px;
+	background: #d45d5c;
+}
+.sectionC .sectionCr .sectionCrcontent .bottom .fl div.strong {
+    float: left;
+    line-height: 80px;
+    font-size: 110px;
+    text-indent: 20px;
+    width: 80px;
+    border-right: 2px solid #fff;
+    height: 80px;
+    margin: 40px auto;
+}
+.sectionC .sectionCr .sectionCrcontent .bottom .fl p.strong {
+	font-size: 21px;
+	line-height: 24px;
+	font-style: italic;
+}
+.sectionC .sectionCr .sectionCrcontent .bottom .fl p {
+	font-size: 12px;
+	line-height: 15px;
+	position: relative;
+	top: 40px;
+	text-indent: 10px;
+}
+.sectionC .sectionCr .sectionCrcontent .bottom .fr {
+	float: left;
+	width: 166px;
+	padding: 16px;
+	color: #000;
+}
+.sectionC .sectionCr .sectionCrcontent .bottom .fr .dot:nth-child(1) {
+	float: left;
+    margin-left: -33px;
+    margin-top: -24px;
+    color: #d45d5c;
+    font-size: 72px;
+    font-weight: bold;
+    height: 35px;
+
+}
+.sectionC .sectionCr .sectionCrcontent .bottom .fr .dot:nth-child(2) {
+    float: right;
+    margin-top: 29px;
+    color: #d45d5c;
+    font-size: 72px;
+    font-weight: bold;
+    line-height: 5px;
+}
+
+/* 底部CSS */
+footer {
+	height: 100px;
+	width: 892px;
+	margin: 0 auto;
+	margin-top: 37px;
+	text-align: right;
+	color: #d45d5c;
+	font: 12px/14px "STHeiti";
+	border-top: 1px solid #000;
+}
