@@ -1,12 +1,12 @@
 # 2017IFE 技术学院课程笔记
 
 - [小薇学院](#小薇学院)  
-	+ [task1](#xiaoweiTask1)
+	+ [task1](#task1)
 	+ [task2](#task2)
 	+ [task3](#task3)
-	+ [task4](#xiaoweiTask4)
-	+ [task5](#xiaoweiTask5)
-	+ [task6](#xiaoweiTask6)
+	+ [task4](#task4)
+	+ [task5](#task5)
+	+ [task6](#task6)
 - [斌斌学院](#斌斌学院)  
 - [耀耀学院](#耀耀学院)  
 - [商业平台学院](#商业平台学院)  
@@ -78,5 +78,5 @@ PS: 同四,仅仅做了一些简单的格式整理.
 6. float 和 position 的区别复习.  
 7. 行头/行尾的双引号不用定位能否做到?    
 8. 修改 li 头部图像: list-style-image,其兼容性如何?注意 list-style-position  
-9. 首字母如何放大?  
-10. 如何让首字母像PSD给出的那样变大?   
+9. 如何让首字母像PSD给出的那样变大?   
+10. 页面上 700 的倾斜我是用 skew 做的,但是为什么元素要是block 的,才可以skew?  
