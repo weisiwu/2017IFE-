@@ -83,7 +83,7 @@ PS: 同四,仅仅做了一些简单的格式整理.
 
 #### task7
 [demoe](https://weisiwu.github.io/2017IFE-/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/task7.html)  
-完成: 
+完成: 2017年3月4日22:20:55
 
 1. PSD 上的行间距是确实指两行的字轮廓的距离吗?  
 2. background 图像可能会定位到 margin 的区块中,如何避免?  
