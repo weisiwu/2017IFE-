@@ -1,0 +1,697 @@
+/* 通用样式 */
+	* {
+		margin: 0;
+		padding: 0;
+		font: 16px/1.5 "microsoft yahei";
+	}
+	ul {
+		list-style: none;
+		overflow: hidden;
+	}
+	.container {
+		width: 1280px;
+		margin: 0 auto;
+	}
+	.fl {
+		float: left;
+	}
+	.fr {
+		float: right;
+	}
+	.button {
+		float: left;
+		text-align: center;
+		font-family: "microsoft yahei";
+		border-radius: 3%;
+		cursor: pointer;
+		border: none;
+	}
+	.last {
+		border: none;
+	}
+
+/* 头部导航条 */
+	.headCon {
+		height: 56px;
+		background: #fff;
+	}
+	.headCon .fl {
+		height: 56px;
+		color: #393a3a;
+		font: 21px/57px "HeiTi";
+		margin-left: 60px;
+		text-indent: 10px;
+		font-weight: bold;
+	}
+	.headCon .fl .icon {
+		float: left;
+		width: 31px;
+		height: 31px;
+		margin-top: 13px;
+		background: url(../images/icon7.png) no-repeat;
+		line-height: 57px;
+	}
+	.headCon .fr {
+		margin-right: 60px;
+	}
+	.headCon .fr ul {
+		float: left;
+		height: 56px;
+		overflow: hidden;
+	}
+	.headCon .fr li {
+		float: left;
+		height: 54px;
+		padding: 0px 22px;
+		line-height: 55px;
+		list-style: none;
+	}
+	.headCon .fr li.active {
+		color: #e74f4d;
+		border-bottom: 2px solid #e74f4d;
+	}
+	.headCon .fr li:hover {
+		color: #e74f4d;
+		border-bottom: 2px solid #e74f4d;
+	}
+	.headCon .fr li:hover a {
+		color: #e74f4d;
+	}
+	.headCon .fr a {
+		text-decoration: none;
+		color: #787b83;
+		font: 14px/55px "microsoft yahei";
+	}
+	.headCon .fr .login {
+		float: right;
+		height: 56px;
+		padding: 0px 22px;
+		font-size: 14px;
+		line-height: 56px;
+		color: #e74f4d;
+		overflow: hidden;
+		text-indent: 5px;
+		cursor: pointer;
+	}
+	.headCon .fr .login .icon {
+		float: left;
+		width: 14px;
+		height: 17px;
+		margin-top: 21px;
+		background: url(../images/login7.png) no-repeat;
+	}
+
+/* banner 1 */
+	.container.bannerA {
+		height: 690px;
+		background: url(../images/7bannerA.png) no-repeat;
+		background-size: cover;
+		background-position: 0% 0%;
+	}
+	.bannerA .title {
+		font-size: 60px;
+		line-height: 90px;
+		color: #fff;
+		margin-left: 120px;
+		padding-top: 225px;
+	}
+	.bannerA .slogan {
+		padding-top: 25px;
+	}
+	.bannerA .slogan p {
+		font-size: 21px;
+		line-height: 37px;
+		color: #fff;
+		margin-left: 125px;
+	}
+	.bannerA .button {
+		width: 331px;
+		height: 65px;
+		background: #e74f4d;
+		color: #fff;
+		font-size: 30px;
+		line-height: 65px;
+		margin-left: 125px;
+		margin-top: 68px;
+	}
+
+/* banner 2 */
+	.container.bannerB {
+		height: 250px;
+		background-size: cover;
+		background-position: 0% 0%;		
+	}
+	.bannerB li {
+		float: left;
+		height: 250px;
+		width: 319.25px;	
+	}
+	.bannerB li .icon {
+		margin: 46px auto;
+	}
+	.bannerB li p {
+		color: #767777;
+		font-size: 14px;
+		line-height: 18px;
+		text-align: center;
+		border-right: 1px solid #989899;
+	}
+	.bannerB li.last p {
+		border: none;
+	}
+	.bannerB .listA {
+		width: 42px;
+		height: 42px;
+		background: url(../images/7listA.png) no-repeat;
+		background-size: contain; 
+	}
+	.bannerB .listB {
+		width: 35px;
+		height: 40px;
+		background: url(../images/7listB.png) no-repeat;
+		background-size: contain; 	
+	}
+	.bannerB .listC {
+		width: 35px;
+		height: 40px;
+		background: url(../images/7listC.png) no-repeat;
+		background-size: contain; 
+	}
+	.bannerB .listD {
+		width: 41px;
+		height: 40px;
+		background: url(../images/7listD.png) no-repeat;
+		background-size: contain; 
+	}
+
+/* banner 3 */
+	.container.bannerC {
+		height: 360px;
+		background: #ededed;
+	}
+	.bannerC .icon {
+		position: relative;
+		top: 90px;
+		margin: 0 auto;
+		width: 91px;
+		height: 92px;
+		background: url(../images/7bannerC.png) no-repeat;
+		background-size: contain;
+	}
+	.bannerC p {
+		text-align: center;
+		font-size: 54px;
+		font-family: "microsoft yahei";
+		color: #a1a1a1;
+		margin-top: 131px;
+	}
+
+/* banner 4 */
+	.container.bannerD {
+		height: 340px;
+		color: #fff;
+		text-align: center;
+		background: url(../images/7bannerD.png) no-repeat;
+		background-size: cover;
+		background-position: 0% 0%;
+	}
+	.bannerD .slogan {
+		position: relative;
+		top: 50px;
+		font-size: 21px;
+		line-height: 42px;
+	}
+	.bannerD .shortLine {
+		position: relative;
+		top: 50px;
+		display: block;
+		margin: 0 auto;
+		width: 31px;
+		height: 3px;
+		background: #fff;
+	}
+	.bannerD .intro {
+		position: relative;
+		top: 68px;
+		font-size: 12px;
+		line-height: 31px;
+	}
+	.bannerD form {
+		position: relative;
+		top: 118px;
+		width: 1030px;
+		margin: 0 auto;
+	}
+	.bannerD ul {
+		position: relative;
+		width: 236px;
+		float: left;
+		line-height: 36px;
+		margin-right: 25px;
+		font-size: 12px;
+		color: #a8aaaa;
+		overflow: visible;
+	}
+	.bannerD ul.active {
+		border: 2px solid #be4f48;
+		outline: none;
+	}
+	.bannerD li.inner {
+		height: 36px;
+		line-height: 36px;
+	}
+	.bannerD li {
+		height: 26px;
+		line-height: 26px;
+		text-align: left;
+		text-indent: 25px;
+		font-size: 12px;
+		color: #a8aaaa;
+		background: #e3e2e4;
+		cursor: pointer;
+	}
+	.bannerD li.downArrow {
+		position: absolute;
+		right: 10px;
+		top: 8px;
+		width: 19px;
+		height: 18px;
+		background: url(../images/downArrow.png) no-repeat;
+		background-size: contain;
+		cursor: pointer;
+	}
+	.bannerD li.active {
+		color: #fff;
+		background: url(../images/bannerDLiActive.png) no-repeat;
+		background-position: 7.4px 50%;
+		background-color: #be4f48;
+	}
+	.bannerD .button {
+		background: #bf4f49;
+		color: #fff;
+		width: 236px;
+		height: 36px;
+		font-size: 14px;
+		line-height: 27px;
+		letter-spacing: 25px;
+		text-indent: 25px;
+	}
+
+/* banner 5 */
+	.container.bannerE {
+		height: 605px;
+		color: #fff;
+		text-align: center;
+		background: #f7f7f7;
+	}
+	.bannerE ul {
+		overflow: hidden;
+		margin: 0px 150px;
+	}
+	.bannerE li {
+		float: left;
+		height: 395px;
+		width: 245px;
+		margin: 100px 0px 110px 0px;
+	}
+	.bannerE p {
+		color: #bcbdbd;
+		font-size: 12px;
+		line-height: 26px;
+	}
+	.bannerE p.title {
+		color: #313233;
+		font-size: 16px;
+		margin-top: 4px;
+	}
+	.bannerE .icon {
+		margin: 0 auto;
+	}
+	.bannerE .title.bold {
+		font-size: 20px;
+	}
+	.bannerE .listA {
+		width: 219px;
+		height: 337px;
+		background: url(../images/7bannerEA.png) no-repeat;
+		background-size: cover;
+	}
+	.bannerE .listB {
+		width: 219px;
+		height: 337px;
+		background: url(../images/7bannerEB.png) no-repeat;
+		background-size: cover;
+	}
+	.bannerE .listC {
+		width: 219px;
+		height: 337px;
+		background: url(../images/7bannerEC.png) no-repeat;
+		background-size: cover;
+	}
+	.bannerE .listD {
+		width: 219px;
+		height: 337px;
+		background: url(../images/7bannerED.png) no-repeat;
+		background-size: cover;
+	}
+
+/* banner 6 */
+	.container.bannerF {
+		height: 565px;
+		color: #fff;
+		text-align: center;
+	}
+	.bannerF .fl {
+		height: 565px;
+		width: 850px;
+		background: url(../images/bannerFfl.png) no-repeat;
+		background-size: cover;
+	}
+	.bannerF .fr {
+		height: 565px;
+		width: 430px;
+	}
+	.bannerF .fr .title {
+		margin: 0 auto;
+		margin-top: 165px;
+		height: 20px;
+		width: 103px;
+		background: url(../images/bannerFfrTitle.png) no-repeat;
+		background-size: cover;
+		margin-bottom: 30px;
+	}
+	.bannerF .fr p {
+		margin: 0 auto;
+		width: 300px;
+		font-size: 12px; 
+		line-height: 30px;
+		color: #aaa;
+		text-align: left;
+	}
+	.bannerF .fr .button {
+		float: none;
+		margin: 0 auto;
+		margin-top: 45px;
+		width: 107px;
+		height: 35px;
+		line-height: 35px;
+		font-size: 12px;
+		border: 1px solid #e25c60;
+		color: #e25c60;
+	}
+	.bannerF .fr ul {
+		overflow: hidden;
+		width: 65px;
+		margin: 0 auto;
+	} 
+	.bannerF .fr li {
+		float: left;
+		width: 11px;
+		height: 11px;
+		margin-right: 13px;
+		border: 1px solid #929293;
+		border-radius: 50%;
+		margin-top: 25px;
+	}
+	.bannerF .fr li.active {
+		background: #929293;
+	}
+	.bannerF .fr li.last {
+		margin-right: 0px;
+	}
+
+/* banner 7 */
+	.container.bannerG {
+		height: 565px;
+		color: #fff;
+		text-align: center;
+	}
+	.bannerG .bkRed {
+		float: left;
+		height: 522px; 
+		width: 426px;
+		background: #e74f4d;
+	}
+	.bannerG .bkRed p {
+		position: relative;
+		top: 170px;
+		font-size: 21px;
+		line-height: 30px;
+	}
+	.bannerG .bkRed .shortLine {
+		position: relative;
+		top: 194px;
+		display: block;
+		margin: 0 auto;
+		width: 31px;
+		height: 3px;
+		background: #fff;
+	} 
+	.bannerG .bkRed .button {
+		position: relative;
+		top: 218px;
+		float: none;
+		margin: 0 auto;
+		width: 170px;
+		height: 44px;
+		font-size: 21px;
+		line-height: 44px;
+		border: 1px solid #fff;
+	}
+	.bannerG .bkWhite {
+		float: left;
+		color: #000;
+		height: 522px; 
+		width: 426px;
+		background: #fff;
+	}
+	.bannerG .bkWhite p {
+		position: relative;
+		top: 170px;
+		font-size: 21px;
+		line-height: 30px;
+		color: #323333;
+	}
+	.bannerG .bkWhite .shortLine {
+		position: relative;
+		top: 194px;
+		display: block;
+		margin: 0 auto;
+		width: 31px;
+		height: 3px;
+		background: #ababaa;
+	} 
+	.bannerG .bkWhite .button {
+		position: relative;
+		top: 218px;
+		float: none;
+		margin: 0 auto;
+		width: 170px;
+		height: 44px;
+		font-size: 21px;
+		line-height: 44px;
+		color: #e74f4d;
+		border: 1px solid #e74f4d;
+	}
+	.bannerG .bkPic {
+		float: left;
+		width: 428px;
+		height: 522px;
+		background: url(../images/bannerGPic.png) no-repeat;
+		background-size: cover;
+	}
+
+/* banner 8 */
+	.container.bannerH {
+		height: 750px;
+		color: #fff;
+		text-align: center;
+	}
+	.bannerH .header .title {
+		position: relative;
+		top: 115px;
+		font-size: 21px; 
+		color: #323333;
+	}
+	.bannerH .header .shortLine {
+		position: relative;
+		top: 126px;
+		display: block;
+		margin: 0 auto;
+		width: 31px;
+		height: 3px;
+		background: #e74f4d;
+	}
+	.bannerH .header p {
+		position: relative;
+		top: 137px;
+		font-size: 12px;
+		line-height: 18px;
+		color: #aaaaaa;
+	}
+	.bannerH .fl {
+		position: relative;
+		top: 242px;
+		left: 150px;
+		width: 300px;
+	}
+	.bannerH .fl .title {
+		font-size: 14px;
+		color: #666160;
+		margin-bottom: 25px;
+	}
+	.bannerH .fl .item {
+		position: relative;
+		margin-bottom: 35px;
+	} 
+	.bannerH .fl p {
+		text-align: left;
+		font-size: 12px;
+		color: #c3c2c2;
+	}
+	.bannerH .fl i {
+		float: left;
+		width: 10px;
+		height: 6px;
+		margin-top: 6.5px;
+		background: url(../images/downArrowE.png) no-repeat;
+		background-size: cover; 
+	}
+	.bannerH .fl a {
+	    text-decoration: none;
+	    font-size: 12px;
+	    text-indent: 5px;
+	    color: #959291;
+	    position: absolute;
+	    right: 0px;
+	    bottom: -15px;
+	}
+	.bannerH .fr {
+		position: relative;
+		top: 242px;
+		left: 150px;
+		width: 980px;
+	}
+	.bannerH .fr .inputTxt {
+		width: 311px;
+		height: 41px;
+		background: #ededee;
+		outline: none;
+		border: none;
+		text-indent: 15px;
+		float: left;
+		font-size: 12px;
+		margin-right: 17px;
+		margin-bottom: 15px;
+	}
+	.bannerH .fr form {
+		margin-left: 70px;
+	}
+	.bannerH .fr textarea.inputTxt {
+		width: 639px;
+		height: 121px;
+		line-height: 25px;
+	}
+	.bannerH .fr .button {
+		width: 639px;
+		height: 41px;
+		font-size: 14px;
+		color: #323333;
+	}
+
+/* footer */
+	footer.container {
+		position: relative;
+		height: 415px;
+		color: #fff;
+		background: #32353e;
+		text-align: center;
+	}
+	footer.container .contact {
+		padding-top: 87px;
+	}
+	footer.container .title {
+		font-size: 21px;
+		line-height: 33px;
+	}
+	footer.container p {
+		font-size: 12px;
+		font-family: "SongTi";
+		line-height: 18px;
+	}
+	footer.container .inputTxt {
+		margin-top: 30px;
+		width: 431px;
+		height: 41px;
+		border: none;
+		text-indent: 10px;
+	}
+	footer.container .button {
+		float: none;
+		position: absolute;
+		top: 186px;
+		width: 81px;
+		height: 41px;
+		color: #fff;
+		background: #6f7278;
+	}
+	footer.container ul {
+		width: 196px;
+		margin: 0 auto;
+		margin-top: 40px;
+		overflow: hidden;
+	}
+	footer.container li {
+		float: left;
+		margin-right: 30px;
+		cursor: pointer;
+	}
+	footer.container li.last {
+		margin-right: 0px; 
+	}
+	footer.container .QQ {
+		width: 24px;
+		height: 25px;
+		background: url(../images/7QQ.png) no-repeat;	
+		background-size: cover;
+	}
+	footer.container .weibo {
+		width: 29px;
+		height: 25px;
+		background: url(../images/7weibo.png) no-repeat;	
+		background-size: cover;
+	}
+	footer.container .twitter {
+		width: 29px;
+		height: 25px;
+		background: url(../images/7twitter.png) no-repeat;	
+		background-size: cover;
+	}
+	footer.container .lnk {
+		width: 24px;
+		height: 25px;
+		background: url(../images/7lnk.png) no-repeat;	
+		background-size: cover;
+	}
+	footer .fixBot {
+		position: absolute;
+		bottom: 0px;
+		width: 1280px;
+		height: 60px;
+		background: #2f3039;
+	}
+	footer .fixBot .fl {
+		position: absolute;
+		font-size: 12px;
+		font-family: "SongTi";
+		bottom: 15px;
+		left: 100px;
+	}
+	footer .fixBot .fr {
+		position: absolute;
+		font-size: 12px;
+		bottom: 15px;
+		right: 40px;
+		color: #fff;
+		text-decoration: none;
+	}

@@ -68,7 +68,7 @@ PS: 同四,仅仅做了一些简单的格式整理.
 #### task6
 
 [demo](https://weisiwu.github.io/2017IFE-/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/task6.html)
-完成: 
+完成: 2017年3月3日21:22:34
 
 1. 了解一下less的安装和使用.  
 2. float 属性生效时,为什么设置高度为100%,会无效?最终使用position来设置,为什么又可以、  
@@ -80,3 +80,13 @@ PS: 同四,仅仅做了一些简单的格式整理.
 8. 修改 li 头部图像: list-style-image,其兼容性如何?注意 list-style-position  
 9. 如何让首字母像PSD给出的那样变大?   
 10. 页面上 700 的倾斜我是用 skew 做的,但是为什么元素要是block 的,才可以skew?  
+
+#### task7
+[demoe](https://weisiwu.github.io/2017IFE-/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/task7.html)  
+完成: 
+
+1. PSD 上的行间距是确实指两行的字轮廓的距离吗?  
+2. background 图像可能会定位到 margin 的区块中,如何避免?  
+3. select/option 如何修改字体大小和样式?  
+4. select 下拉箭头如何修改?  
+5. PSD 里面有一部分的文字直接和图片一起截下来,没有做HTML实现.  
