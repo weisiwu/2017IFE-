@@ -89,4 +89,15 @@ PS: 同四,仅仅做了一些简单的格式整理.
 2. background 图像可能会定位到 margin 的区块中,如何避免?  
 3. select/option 如何修改字体大小和样式?  
 4. select 下拉箭头如何修改?  
-5. PSD 里面有一部分的文字直接和图片一起截下来,没有做HTML实现.  
+5. PSD 里面有一部分的文字直接和图片一起截下来,没有做HTML实现. 
+
+#### task8
+[demoe](https://weisiwu.github.io/2017IFE-/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/task8.html)  
+完成: 2017年3月4日22:20:55
+
+1. bootstrap 的栅格系统的原理是什么?是如何做兼容的?  
+2. [class*=col-] 这种css选择器的用法是什么? 如何自动转换?  
+3. @baseFontFamily, @baseFontSize,@baseLineHeight 都是什么?  
+4. 为什么需要gutter, border-box 用来做什么?  
+5. last-of-type 选择器  ~ 选择器 & [CSS3选择器](http://www.w3cplus.com/css3/basic-selectors)
+6. [栅格的需要注意的异常](http://j4n.co/blog/Creating-your-own-css-grid-system)  

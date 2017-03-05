@@ -1,0 +1,99 @@
+.grid-container {
+	width: 100%;
+	max-width: 1200px;
+	/* tmp */
+	padding: 20px;
+}
+.grid-container * {
+	box-sizing: border-box;
+}
+.grid-row {
+	padding: 10px 0px;
+}
+.grid-row:before,
+.grid-row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+[class*='grid-col-'] {
+	float: left;
+	min-height: 1px;
+	width: 8.33%;
+	padding: 12px;
+	/* tmp */
+	border: 1px solid #000;
+	background-color: #eee;
+}
+.grid-col-1 {
+	width: 8.33%;
+}
+.grid-col-2 {
+	width: 16.66%;
+}
+.grid-col-3 {
+	width: 25%;
+}
+.grid-col-4 {
+	width: 33.33%;
+}
+.grid-col-5 {
+	width: 41.66%;
+}
+.grid-col-6 {
+	width: 50%;
+}
+.grid-col-7 {
+	width: 58.33%;
+}
+.grid-col-8 {
+	width: 66.66%;
+}
+.grid-col-9 {
+	width: 75%;
+}
+.grid-col-10 {
+	width: 83.33%;
+}
+.grid-col-11 {
+	width: 91.66%;
+}
+.grid-col-12 {
+	width: 100%;
+}
+
+/* 响应式 */ 
+@media all and (max-width: 768px) {
+	.grid-row .grid-col-1 {
+		width: 16.66%;
+	}
+	.grid-row .grid-col-1 ~ .grid-col-2 {
+		width: 25%;
+		margin-top: 20px;
+	}
+	.grid-row .grid-col-1 + .grid-col-2 {
+		width: 66.66%;
+		margin-top: 0px;
+	}
+	.grid-row .grid-col-6:last-of-type {
+		width: 25%;
+		margin-top: 20px;
+	}
+	.grid-row .grid-col-4 {
+		width: 50%;
+	}
+	.grid-row .grid-col-4:last-of-type {
+		width: 100%;
+		margin-top: 20px;
+	}
+	.grid-row .grid-col-5 {
+		width: 50%;
+	}
+
+}
+
+
+/* tmp */
+.outline {
+	outline: 1px solid #F6A1A1;
+}
