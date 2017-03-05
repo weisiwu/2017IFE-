@@ -1,0 +1,312 @@
+/* 通用样式 */
+	* {
+		margin: 0;
+		padding: 0;
+		font: 16px/1.5 "microsoft yahei";
+	}
+	ul {
+		list-style: none;
+		overflow: hidden;
+	}
+	.container {
+		width: 1280px;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	.fl {
+		float: left;
+	}
+	.fr {
+		float: right;
+	}
+	.button {
+		float: left;
+		text-align: center;
+		font-family: "microsoft yahei";
+		border-radius: 3%;
+		cursor: pointer;
+		border: none;
+	}
+	.last {
+		border: none;
+	}
+
+/* 顶部样式 */
+	header {
+		height: 56px;
+		width: 100%;
+		min-width: 1280px;
+		margin: 0 auto;
+		background: rgb(34, 138, 191);
+	}
+	header .content {
+		width: 1280px;
+		height: 56px;
+		margin: 0 auto;
+	}
+	header .fl.icon {
+		float: left;
+		width: 36px;
+		height: 36px;
+		margin-top: 10px;
+		margin-left: 50px;
+		background: url(../images/task9Logo.png) no-repeat;
+	}
+	header .fr.search {
+		position: relative;
+	}
+	header .fr i {
+		position: absolute;
+		top: 50%;
+		left: 15px;
+		margin-top: -8.5px;
+		width: 17px;
+		height: 17px;
+		background: url(../images/task9-3.png);
+		background-size: cover; 
+	}
+	header .fr .login {
+		float: right;
+		height: 56px;
+		margin-right: 95px;
+		margin-left: 20px;
+		font-size: 12px;
+		line-height: 59px;
+		color: #fff;
+		overflow: hidden;
+		text-indent: 5px;
+		cursor: pointer;
+	}
+	header .fr input {
+		width: 313px;
+		height: 28px;
+		margin-top: 14px;
+		text-indent: 40px;
+		outline: none;
+		border: none;
+		border-radius: 14px;
+	}
+	header .fr .login .icon {
+		float: left;
+		width: 14px;
+		height: 17px;
+		margin-top: 21px;
+		background: url(../images/task9-2.png) no-repeat;
+	}
+
+/* 左边栏 */
+	.navLeft {
+		height: 1213px;
+		width: 260px;
+		background: #2a2d3d;
+		color: #fff;
+	}
+	.navLeft .information {
+		width: 140px;
+		padding: 19px 0px 20px 45px;
+		overflow: hidden;
+	}
+	.navLeft .information .infoPic {
+		float: left;
+		width: 57px;
+		height: 57px;
+		background: url(../images/task9-4.png) no-repeat;
+		background-size: contain; 
+	}
+	.navLeft .information .infoName {
+		float: left;
+		margin-left: 15px;
+		line-height: 57px;
+		height: 57px;
+	}
+	.navLeft .information .infoCol {
+		float: left;
+		margin-top: 24px;
+		margin-left: 15px;
+	}
+	.navLeft .information .infoCol p {
+		line-height: 13px;
+		font-size: 12px;
+		color: #6e8095;
+		padding-right: 30px;
+		border-right: 1px solid #313545;
+	}
+	.navLeft .information .infoCol p:nth-child(1) {
+		line-height: 18px;
+		font-size: 16px;
+	}
+	.navLeft .information .infoFan {
+		float: left;
+		margin-top: 24px;
+		padding-left: 30px;
+	}
+	.navLeft .information .infoFan p {
+		line-height: 13px;
+		font-size: 12px;
+		color: #6e8095;
+	}
+	.navLeft .information .infoFan p:nth-child(1) {
+		line-height: 18px;
+		font-size: 16px;
+	}
+	.navLeft .firstClass {
+	}
+	.navLeft .firstClass li {
+		height: 50px;
+		line-height: 50px;
+		padding-left: 45px;
+	}
+	.navLeft .firstClass li.active {
+		position: relative;
+		background: rgb(49, 53, 69);
+		height: 191px;
+	}
+	.navLeft .firstClass > li.active > i {
+		margin-top: 13px;
+	}
+	.navLeft .firstClass > li.active > span {
+		position: relative;
+		top: -6px;
+	}
+	.navLeft .firstClass li i {
+		float: left;
+		display: block;
+		width: 12px;
+		height: 12px;
+		margin-top: 20px;
+	}
+	.navLeft .firstClass li i.fcA {
+		background: url(../images/task9fcA.png) no-repeat;
+		background-size: contain;
+	}
+	.navLeft .firstClass li i.fcB {
+		background: url(../images/task9fcB.png) no-repeat;
+		background-size: contain;
+	}
+	.navLeft .firstClass li i.fcC {
+		background: url(../images/task9fcC.png) no-repeat;
+		background-size: contain;
+	}
+	.navLeft .firstClass li i.fcD {
+		background: url(../images/task9fcD.png) no-repeat;
+		background-size: contain;
+	}
+	.navLeft .firstClass li i.fcE {
+		background: url(../images/task9fcD.png) no-repeat;
+		background-size: contain;
+	}
+	.navLeft .firstClass li i.fcF {
+		background: url(../images/task9fcF.png) no-repeat;
+		background-size: contain;
+	}
+	.navLeft .firstClass li span {
+		font-size: 12px;
+		padding-left: 13px;
+	}
+	.navLeft .firstClass li ul.secondClass {
+		position: absolute;
+	    left: 36px;
+	    top: 36px;
+		overflow: visible;
+	}
+	.navLeft .firstClass li ul.secondClass li {
+		height: 30px;
+		line-height: 30px;
+		padding-left: 25px;
+	}
+	.navLeft .firstClass li ul.secondClass li.active {
+		position: relative;
+		height: 90px;
+		width: 100%;
+	}
+	.navLeft .firstClass li ul.secondClass li.active i {}
+	.navLeft .firstClass li ul.secondClass li.active span {}
+	.navLeft .firstClass li ul.secondClass li i {}
+	.navLeft .firstClass li ul.secondClass li i.fsA {
+		background: url(../images/task9fsA.png) no-repeat;
+		background-size: contain;
+	}
+	.navLeft .firstClass li ul.secondClass li i.fsB {
+		background: url(../images/task9fsB.png) no-repeat;
+		background-size: contain;
+	}
+	.navLeft .firstClass li ul.secondClass li i.fsC {
+		background: url(../images/task9fsA.png) no-repeat;
+		background-size: contain;
+	}
+	.navLeft .firstClass li ul.secondClass li i.fsA2 {
+		background: url(../images/task9fsA2.png) no-repeat;
+		background-size: contain;
+		margin-left: 7px;
+	}
+	.navLeft .firstClass li ul.secondClass li i.fsB2 {
+		background: url(../images/task9fsB2.png) no-repeat;
+		background-size: contain;
+		margin-left: 7px;
+	}
+	.navLeft .firstClass li ul.secondClass li i.fsC2 {
+		background: url(../images/task9fsA2.png) no-repeat;
+		background-size: contain;
+		margin-left: 7px;
+	}
+	.navLeft .firstClass li ul.secondClass li i {
+		margin-top: 9px;
+	}
+	.navLeft .firstClass li ul.secondClass li span {
+		float: left;
+		line-height: 30px;
+		padding-left: 5px;
+	}
+	.navLeft .firstClass li ul.secondClass ul.thirdClass {
+		position: absolute;
+		top: 29px;
+		left: 25px;
+	}
+	.navLeft .firstClass li ul.secondClass ul.thirdClass li {
+		padding-left: 30px;
+	}
+	.navLeft .firstClass li ul.secondClass ul.thirdClass li.active {}
+	.navLeft .firstClass li ul.secondClass ul.thirdClass li.active i {}
+	.navLeft .firstClass li ul.secondClass ul.thirdClass li.active span {}
+	.navLeft .firstClass li ul.secondClass ul.thirdClass li i {}
+	.navLeft .firstClass li ul.secondClass ul.thirdClass li i.ftA {
+		background: url(../images/task9ftA.png) no-repeat;
+		background-size: contain;
+		margin-left: 4px;
+	}
+	.navLeft .firstClass li ul.secondClass ul.thirdClass li i.ftB {
+		background: url(../images/task9ftB.png) no-repeat;
+		background-size: contain;
+		margin-left: 4px;
+	}
+	.navLeft .firstClass li ul.secondClass ul.thirdClass li span {}
+
+/* 右侧内容 */
+	.conRight {
+		width: 1020px;
+		background: #eeeeed;
+	}
+	.conRight .breadThumb {
+		height: 31px;
+		overflow: hidden;
+		padding-left: 30px;
+		background: #fff;
+	}
+	.conRight .breadThumb li {
+		float: left;
+		font-size: 12px;
+		line-height: 31px;
+		color: #aaaaaa;
+	}
+	.conRight .breadThumb li a {
+		color: #82a8cb;
+		font-size: 12px;
+		text-decoration: none;
+	}
+	.conRight .subContainer {
+		width: 891px;
+		height: 86px;
+		margin: 0px auto;
+		margin-top: 20px;
+		background: #fff;
+	}

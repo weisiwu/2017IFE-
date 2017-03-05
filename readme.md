@@ -7,6 +7,9 @@
 	+ [task4](#task4)
 	+ [task5](#task5)
 	+ [task6](#task6)
+	+ [task7](#task7)
+	+ [task8](#task8)
+	+ [task9](#task9)
 - [斌斌学院](#斌斌学院)  
 - [耀耀学院](#耀耀学院)  
 - [商业平台学院](#商业平台学院)  
@@ -82,7 +85,7 @@ PS: 同四,仅仅做了一些简单的格式整理.
 10. 页面上 700 的倾斜我是用 skew 做的,但是为什么元素要是block 的,才可以skew?  
 
 #### task7
-[demoe](https://weisiwu.github.io/2017IFE-/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/task7.html)  
+[demo](https://weisiwu.github.io/2017IFE-/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/task7.html)  
 完成: 2017年3月4日22:20:55
 
 1. PSD 上的行间距是确实指两行的字轮廓的距离吗?  
@@ -92,7 +95,7 @@ PS: 同四,仅仅做了一些简单的格式整理.
 5. PSD 里面有一部分的文字直接和图片一起截下来,没有做HTML实现. 
 
 #### task8
-[demoe](https://weisiwu.github.io/2017IFE-/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/task8.html)  
+[demo](https://weisiwu.github.io/2017IFE-/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/task8.html)  
 完成: 2017年3月4日22:20:55
 
 1. bootstrap 的栅格系统的原理是什么?是如何做兼容的?  
@@ -101,3 +104,8 @@ PS: 同四,仅仅做了一些简单的格式整理.
 4. 为什么需要gutter, border-box 用来做什么?  
 5. last-of-type 选择器  ~ 选择器 & [CSS3选择器](http://www.w3cplus.com/css3/basic-selectors)
 6. [栅格的需要注意的异常](http://j4n.co/blog/Creating-your-own-css-grid-system)  
+
+#### task9  
+[demo](https://weisiwu.github.io/2017IFE-/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/task9.html)  
+完成: 
+1. 总结一下,多层列表如何写?demo仅仅是一个强行拼凑出来的样子而已.  
