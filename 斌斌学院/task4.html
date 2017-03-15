@@ -1,0 +1,84 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>task 04</title>
+    <style type="text/css">
+      #itemList {
+        overflow: hidden;
+        list-style: none;
+      }
+      #itemList li {
+        float: left;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        background: red;
+        text-align: center;
+        margin: 0px 10px;
+        color: #fff;
+      }
+    </style>
+  </head>
+<body>
+
+<input type="text" id="newItem" name="">
+<button id="btnLin">左侧入</button>
+<button id="btnRin">右侧入</button>
+<button id="btnLout">左侧出</button>
+<button id="btnRout">右侧出</button>
+
+<!-- 队列 -->
+<ul id="itemList">
+  <li>10</li>
+  <li>3</li>
+  <li>7</li>
+  <li>12</li>
+  <li>11</li>
+  <li>30</li>
+</ul>
+<script type="text/javascript">
+  // 获取元素
+  var btnLin = document.getElementById("btnLin"),
+    btnRin = document.getElementById("btnRin"),
+    btnLout = document.getElementById("btnLout"),
+    btnRout = document.getElementById("btnRout"),
+    newItem = document.getElementById("newItem"),
+    itemList = document.getElementById("itemList");
+
+  // 注册事件
+  document.addEventListener("click", function(evt) {
+    var ID = evt.target.id;
+
+    switch(ID) {
+      case "btnLin":
+        if(validate()) {
+          itemList.innerHTML = ("<li>" + newItem.value + "</li>") + itemList.innerHTML;
+        }
+        break;
+      case "btnRin":
+        if(validate()) {
+          itemList.innerHTML = itemList.innerHTML + ("<li>" + newItem.value + "</li>");
+        }
+        break;
+      case "btnLout":
+        itemList.children[0].remove();
+        break;
+      case "btnRout":
+        itemList.children[itemList.children.length - 1].remove();
+        break;
+      default: 
+        if(evt.target.tagName == "li" || evt.target.tagName == "LI") {
+          evt.target.remove();
+        }
+    }
+  });
+
+  // 验证数字
+  function validate() {
+    return /^[0-9]{1,}$/.test(newItem.value);
+  }
+
+</script>
+</body>
+</html>

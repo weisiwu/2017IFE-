@@ -1,0 +1,129 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>task 05</title>
+    <style type="text/css">
+      #itemList {
+        overflow: hidden;
+        list-style: none;
+      }
+      #itemList li {
+        float: left;
+        width: 30px;
+        height: 100px;
+        background: red;
+        text-align: center;
+        margin: 0px 10px;
+        color: #fff;
+        position: relative;
+      }
+    </style>
+  </head>
+<body>
+
+<input type="text" id="newItem" name="">
+<button id="btnLin">左侧入</button>
+<button id="btnRin">右侧入</button>
+<button id="btnLout">左侧出</button>
+<button id="btnRout">右侧出</button>
+<button id="btnSort">排序</button>
+
+<!-- 队列 -->
+<ul id="itemList">
+  <li style='margin-top:90px; height: 10px;'></li>
+  <li style='margin-top:97px; height: 3px;'></li>
+  <li style='margin-top:93px; height: 7px;'></li>
+  <li style='margin-top:88px; height: 12px;'></li>
+  <li style='margin-top:89px; height: 11px;'></li>
+  <li style='margin-top:70px; height: 30px;'></li>
+</ul>
+<script type="text/javascript">
+  // 获取元素
+  var btnLin = document.getElementById("btnLin"),
+    btnRin = document.getElementById("btnRin"),
+    btnLout = document.getElementById("btnLout"),
+    btnRout = document.getElementById("btnRout"),
+    newItem = document.getElementById("newItem"),
+    itemList = document.getElementById("itemList"),
+    btnSort = document.getElementById("btnSort");
+
+  // 注册事件
+  document.addEventListener("click", function(evt) {
+    var ID = evt.target.id;
+
+    switch(ID) {
+      case "btnLin":
+        if(validate()) {
+          if(itemList.children.length >= 60) {
+            alert("长度超过60!");
+            return;
+          }
+          itemList.innerHTML = ("<li style='margin-top:" + (100 - newItem.value) + "px; height:" + newItem.value + "px;'></li>") + itemList.innerHTML;
+        }
+        break;
+      case "btnRin":
+        if(validate()) {
+          if(itemList.children.length >= 60) {
+            alert("长度超过60!");
+            return;
+          }
+          itemList.innerHTML = itemList.innerHTML + ("<li style='margin-top:" + (100 - newItem.value) + "px; height:" + newItem.value + "px;'></li>");
+        }
+        break;
+      case "btnLout":
+        itemList.children[0].remove();
+        break;
+      case "btnRout":
+        itemList.children[itemList.children.length - 1].remove();
+        break;
+      case "btnSort":
+        bubbleSort();
+        break;
+      default: 
+        if(evt.target.tagName == "li" || evt.target.tagName == "LI") {
+          evt.target.remove();
+        }
+    }
+  });
+
+  // 验证数字的格式和范围
+  function validate() {
+    return /^[0-9]{1,}$/.test(newItem.value) && 
+      (newItem.value >= 10) &&
+      (newItem.value <= 100);
+  }
+
+  // 冒泡排序
+  function bubbleSort() {
+    var queue = itemList.children;
+    for(var j = queue.length; j > 0; j --) {
+      for(var i = 0; i < j - 1; i ++) {
+        if(parseInt(queue[i].style.height) > parseInt(queue[i + 1].style.height)) {
+          var now = queue[i],
+            next = queue[i + 1];
+          var newItemX = document.createElement("li");
+            newItemX.style.marginTop = now.style.marginTop;
+            newItemX.style.height = now.style.height;
+            insertAfter(newItemX, next);
+            now.remove();
+        }
+      }
+      
+    }
+  }
+
+  // 元素插入程序
+  function insertAfter(newEl, targetEl) {
+    var parentEl = targetEl.parentNode;   
+     if(parentEl.lastChild == targetEl) {
+      parentEl.appendChild(newEl);
+    }
+    else {
+      parentEl.insertBefore(newEl,targetEl.nextSibling);
+    }            
+  }
+
+</script>
+</body>
+</html>
