@@ -1,0 +1,147 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>task 06</title>
+    <style type="text/css">
+      #itemList {
+        overflow: hidden;
+        list-style: none;
+      }
+      button, textarea {
+        width: 100px;
+        height: 50px;
+        float: left;
+        margin-right: 10px;
+      }
+      textarea {
+        width: 200px;
+      }
+      input {
+        width: 100px;
+        height: 30px;
+        margin-top: 10px;
+        margin-right: 10px;
+        float: left;
+      }
+      #itemList {
+        float: left;
+        overflow: hidden;
+      }
+      #itemList li {
+        float: left;
+        padding: 0px 10px;
+        height: 30px;
+        line-height: 30px;
+        background: red;
+        text-align: center;
+        margin: 0px 10px;
+        color: #fff;
+        border-radius: 10%;
+      }
+      #itemList li.active {
+        color: #000;
+        background: yellow;
+      }
+      ._blank20 {
+        height: 20px;
+        width: 100%;
+        float: left;
+      }
+    </style>
+  </head>
+<body>
+
+<textarea id="newItem"></textarea>
+<button id="btnLin">左侧入</button>
+<button id="btnRin">右侧入</button>
+<button id="btnLout">左侧出</button>
+<button id="btnRout">右侧出</button>
+<div class="_blank20"></div>
+<!-- 队列 -->
+<ul id="itemList">
+  <li>10</li>
+  <li>3</li>
+  <li>7</li>
+  <li>12</li>
+  <li>11</li>
+  <li>30</li>
+</ul>
+<div class="_blank20"></div>
+<input type="text" name="queryStr" id="queryStr" placeholder="查询字段">
+<button id="queryBtn">查询</button>
+<script type="text/javascript">
+  // 获取元素
+  var btnLin = document.getElementById("btnLin"),
+    btnRin = document.getElementById("btnRin"),
+    btnLout = document.getElementById("btnLout"),
+    btnRout = document.getElementById("btnRout"),
+    newItem = document.getElementById("newItem"),
+    itemList = document.getElementById("itemList"),
+    queryStr = document.getElementById("queryStr");
+
+  // 注册事件
+  document.addEventListener("click", function(evt) {
+    var ID = evt.target.id, domList;
+
+    switch(ID) {
+      case "btnLin":
+        domList = sliceContent();
+        // 遍历添加
+        for(var i = 0; i < domList.length; i ++) {
+          if(domList[i] == "") {continue;}
+          itemList.innerHTML = ("<li>" + domList[i] + "</li>") + itemList.innerHTML;
+        }
+        break;
+      case "btnRin":
+        domList = sliceContent();
+        // 遍历添加
+        for(var i = 0; i < domList.length; i ++) {
+          if(domList[i] == "") {continue;}
+          itemList.innerHTML = itemList.innerHTML + ("<li>" + domList[i] + "</li>");
+        }
+        break;
+      case "btnLout":
+        itemList.children[0].remove();
+        break;
+      case "btnRout":
+        itemList.children[itemList.children.length - 1].remove();
+        break;
+      case "queryBtn":
+        fuzzySearch();
+        break; 
+      default: 
+        if(evt.target.tagName == "li" || evt.target.tagName == "LI") {
+          evt.target.remove();
+        }
+    }
+  });
+
+  // 将内容拆分成段
+  function sliceContent() {
+    var res = newItem.value.split(/[，,、\s\t\r]/igm);
+    return res;
+  }
+
+  // 模糊搜索函数
+  function fuzzySearch() {
+    var itemSet = itemList.getElementsByTagName("li");
+    for(var j = 0; j < itemSet.length; j ++) {
+      itemSet[j].className = itemSet[j].className.replace("active", "");
+    }
+    for(var i = 0; i < itemSet.length; i ++) {
+      if(itemSet[i].innerText.indexOf(queryStr.value) >= 0) {
+        markItem(itemSet[i]);
+      }
+    }
+      
+  }
+
+  // 标记函数
+  function markItem(dom) {
+    dom.className = dom.className + " active";
+  }
+
+</script>
+</body>
+</html>
