@@ -1,0 +1,84 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>task 07</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        padding: 20px 10px;
+        border: 1px solid #000;
+        float: left;
+        width: 45%;
+        margin: 0 2.5%;
+        box-sizing: border-box;
+      }
+      .foot {
+        position: absolute;
+        left: 50%;
+        top: 20%;
+        margin: 0;
+        margin-left: -300px;
+        width: 600px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+<body>
+<!-- 二叉树页面结构 -->
+<div id="bt" class="foot">
+  <div>
+    <div>
+      <div></div>
+      <div></div>
+    </div>
+    <div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div></div>
+      <div></div>
+    </div>
+    <div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var target = document.getElementById("bt");
+
+  // 生成树函数
+  function tree() {
+    target;
+  }
+  
+  // 给树注册遍历方法
+  tree.prototype.traverse = function(type) {
+    switch(type) {
+      case "preorder":
+        console.log("preorder");
+        break;
+      case "inorder":
+        console.log("inorder");
+        break;
+      case "postorder":
+        console.log("postorder");
+        break;
+    }
+  };
+
+  // 动画效果
+  function animation() {
+
+  }
+</script>
+</body>
+</html>
