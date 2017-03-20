@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>task 07</title>
+    <title>task 08</title>
     <style type="text/css">
       * {
         margin: 0;
@@ -51,9 +51,7 @@
 <body>
 <!-- 遍历按钮 -->
 <div class="center">
-  <button id="preorder">前序遍历</button>
-  <button id="inorder">中序遍历</button>
-  <button id="postorder">后序遍历</button>
+  <button id="order">遍历</button>
 </div>
 <!-- 二叉树页面结构 -->
 <div id="bt" class="foot">
@@ -86,11 +84,10 @@
    * left: 左树
    * right: 右树
    */
-  function node(data, left, right, parent) {
+  function node(data, children, parent) {
     // 初始化属性
     this.data = data;
-    this.left = left;
-    this.right = right;
+    this.children = children;
     this.parent = parent;
   }
 
@@ -99,7 +96,7 @@
    */
   function tree(data) {
     // 初始化根节点
-    this.root = new node(data, null, null, null);
+    this.root = new node(data, null, null);
     this.animation = animation;
     // 通过数据来填充返回值
     init(this.root, data);
@@ -108,35 +105,12 @@
   /** preorder 后序遍历
    *  rootNode: 当前节点
    */ 
-  function preOrder(rootNode, resultArr) {
+  function Order(rootNode, resultArr) {
     // 如果为空,则返回
     if(!rootNode.data) {return;}
     resultArr.push(rootNode.data);
-    preOrder(rootNode.left, resultArr);
-    preOrder(rootNode.right, resultArr);
-  }
-
-
-  /** inorder 寻找下一个节点
-   *  rootNode: 当前节点
-   */ 
-  function inOrder(rootNode, resultArr) {
-    // 如果为空,则返回
-    if(!rootNode.data) {return;}
-    inOrder(rootNode.left, resultArr);
-    resultArr.push(rootNode.data);
-    inOrder(rootNode.right, resultArr);
-  }
-
-  /** postorder 后序遍历
-   *  rootNode: 当前节点
-   */ 
-  function postOrder(rootNode, resultArr) {
-    // 如果为空,则返回
-    if(!rootNode.data) {return;}
-    postOrder(rootNode.left, resultArr);
-    postOrder(rootNode.right, resultArr);
-    resultArr.push(rootNode.data);
+    Order(rootNode.left, resultArr);
+    Order(rootNode.right, resultArr);
   }
 
   /** 利用DOM结构初始化树的值 
@@ -150,9 +124,9 @@
     }
     targetNode.data = data;
     var dataArr = data.children;
-    targetNode.left = new node(dataArr[0], null, null, targetNode);
+    targetNode.left = new node(dataArr[0], null, targetNode);
     init(targetNode.left, dataArr[0]);
-    targetNode.right = new node(dataArr[1], null, null, targetNode);
+    targetNode.right = new node(dataArr[1], null, targetNode);
     init(targetNode.right, dataArr[1]);
 
   };
@@ -212,15 +186,8 @@
 
     // 根据类型遍历
     switch(type) {
-      case "preorder":
-        preOrder(rootNode, resultArr);
-        break;
-      case "inorder":
-        // 中序遍历
-        inOrder(rootNode, resultArr);
-        break;
-      case "postorder":
-        postOrder(rootNode, resultArr);
+      case "order":
+        Order(rootNode, resultArr);
         break;
     }
 
@@ -236,12 +203,10 @@
       target = document.getElementById("bt"),
       pageTree = new tree(target);
     
-    if(targetID != "inorder" && targetID != "postorder" && targetID != "preorder") {
-      return;
-    }
+    if(targetID != "order") {return;}
 
     // 遍历树节点  
-    pageTree.traverse(targetID);
+    pageTree.traverse();
 
   });
 </script>
