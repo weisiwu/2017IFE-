@@ -12,7 +12,6 @@
         padding: 20px 10px;
         border: 1px solid #000;
         float: left;
-        width: 45%;
         margin: 0 2.5%;
         box-sizing: border-box;
       }
@@ -35,15 +34,13 @@
         height: 50px;
         float: left;
         margin: 20px auto;
-        margin-left: 50px;
+        margin-left: 200px;
       }
       .foot {
         position: absolute;
-        left: 50%;
         top: 20%;
         margin: 0;
-        margin-left: -300px;
-        width: 600px;
+        width: 100%;
         overflow: hidden;
       }
     </style>
@@ -55,38 +52,58 @@
 </div>
 <!-- 二叉树页面结构 -->
 <div id="bt" class="foot">
+  super
   <div>
+    car
     <div>
-      <div></div>
-      <div></div>
+      apple
+      <div>pear</div>
+      <div>pig</div>
+      <div>cola</div>
+      <div>succor</div>
     </div>
     <div>
-      <div></div>
-      <div></div>
+      phone
+    </div>
+    <div>
+      <div>book</div>
+      <div>school</div>
     </div>
   </div>
   <div>
+    note
     <div>
-      <div></div>
-      <div></div>
+      human
+      <div>code</div>
+      <div>operate</div>
+      <div>man</div>
     </div>
     <div>
-      <div></div>
-      <div></div>
+      program
+      <div>
+        element
+        <div>cat</div>
+      </div>
+      <div>
+        grass
+      </div>
     </div>
   </div>
+  <div>fish</div>
 </div>
 
 <script type="text/javascript">
   /**
    * 节点类
-   * data: 存储二叉树信息的DOM根节点
-   * left: 左树
-   * right: 右树
+   * data: 存储多叉树信息的DOM根节点
+   * children: 节点子节点
+   * text: 节点文字
+   * parent: 节点父节点
    */
-  function node(data, children, parent) {
+  function node(data, children, text, parent) {
     // 初始化属性
     this.data = data;
+    this.text = text;
     this.children = children;
     this.parent = parent;
   }
@@ -96,7 +113,7 @@
    */
   function tree(data) {
     // 初始化根节点
-    this.root = new node(data, null, null);
+    this.root = new node(data, null, "supper", null);
     this.animation = animation;
     // 通过数据来填充返回值
     init(this.root, data);
@@ -109,8 +126,8 @@
     // 如果为空,则返回
     if(!rootNode.data) {return;}
     resultArr.push(rootNode.data);
-    Order(rootNode.left, resultArr);
-    Order(rootNode.right, resultArr);
+    //Order(rootNode.left, resultArr);
+    //Order(rootNode.right, resultArr);
   }
 
   /** 利用DOM结构初始化树的值 
