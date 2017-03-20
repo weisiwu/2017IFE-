@@ -105,26 +105,6 @@
     init(this.root, data);
   }
 
-  /** preorder 寻找下一个节点
-   *  rootNode: 当前节点
-   */ 
-  // function preFindNext(rootNode) {
-  //   // 根节点
-  //   if(!rootNode.parent) {
-  //     return {
-  //       data: null
-  //     };
-  //   }
-  //   // 自身为左节点(已访问)
-  //   if(rootNode.parent.left === rootNode) {
-  //     return rootNode.parent.right;
-  //   }
-  //   // 自身为右节点
-  //   else {
-  //     return preFindNext(rootNode.parent);
-  //   }
-  
-  // }
   /** preorder 后序遍历
    *  rootNode: 当前节点
    */ 
@@ -134,7 +114,6 @@
     resultArr.push(rootNode.data);
     preOrder(rootNode.left, resultArr);
     preOrder(rootNode.right, resultArr);
-    console.log(resultArr);
   }
 
 
@@ -147,7 +126,6 @@
     inOrder(rootNode.left, resultArr);
     resultArr.push(rootNode.data);
     inOrder(rootNode.right, resultArr);
-    console.log(resultArr);
   }
 
   /** postorder 后序遍历
@@ -159,7 +137,6 @@
     postOrder(rootNode.left, resultArr);
     postOrder(rootNode.right, resultArr);
     resultArr.push(rootNode.data);
-    console.log(resultArr);
   }
 
   /** 利用DOM结构初始化树的值 
@@ -205,6 +182,11 @@
         (function(i, slip) {
           setTimeout(function() {
             domArr[i].className = domArr[i].className.replace("active", "");
+            // 解除阻止
+            var btnList = document.getElementsByTagName("button");
+            for(var j = 0; j < btnList.length; j ++) {
+              btnList[j].removeAttribute("disabled");
+            }
           }, slip)
         })(i, slip);
       }
@@ -221,6 +203,12 @@
   tree.prototype.traverse = function(type) {
     var rootNode = this.root,
       resultArr = [];
+
+    // 在某种遍历进行中,阻止其他遍历
+    var btnList = document.getElementsByTagName("button");
+    for(var i = 0; i < btnList.length; i ++) {
+      btnList[i].setAttribute("disabled", "true");
+    }
 
     // 根据类型遍历
     switch(type) {
