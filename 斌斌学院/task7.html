@@ -16,6 +16,27 @@
         margin: 0 2.5%;
         box-sizing: border-box;
       }
+      div.active {
+        background: red;
+      }
+      div.active div {
+        background: #fff;
+      }
+      .center {
+        width: 500px;
+        margin: 0 auto;
+        margin-top: 20px;
+        float: none;
+        padding: 0;
+        overflow: hidden;
+      }
+      .center button {
+        width: 100px;
+        height: 50px;
+        float: left;
+        margin: 20px auto;
+        margin-left: 50px;
+      }
       .foot {
         position: absolute;
         left: 50%;
@@ -28,6 +49,12 @@
     </style>
   </head>
 <body>
+<!-- 遍历按钮 -->
+<div class="center">
+  <button id="preorder">前序遍历</button>
+  <button id="inorder">中序遍历</button>
+  <button id="postorder">后序遍历</button>
+</div>
 <!-- 二叉树页面结构 -->
 <div id="bt" class="foot">
   <div>
@@ -53,32 +80,182 @@
 </div>
 
 <script type="text/javascript">
-  var target = document.getElementById("bt");
-
-  // 生成树函数
-  function tree() {
-    target;
+  /**
+   * 节点类
+   * data: 存储二叉树信息的DOM根节点
+   * left: 左树
+   * right: 右树
+   */
+  function node(data, left, right, parent) {
+    // 初始化属性
+    this.data = data;
+    this.left = left;
+    this.right = right;
+    this.parent = parent;
   }
-  
-  // 给树注册遍历方法
-  tree.prototype.traverse = function(type) {
-    switch(type) {
-      case "preorder":
-        console.log("preorder");
-        break;
-      case "inorder":
-        console.log("inorder");
-        break;
-      case "postorder":
-        console.log("postorder");
-        break;
+
+  /** 树类
+   *  data: DOM值
+   */
+  function tree(data) {
+    // 初始化根节点
+    this.root = new node(data, null, null, null);
+    this.animation = animation;
+    // 通过数据来填充返回值
+    init(this.root, data);
+  }
+
+  /** preorder 寻找下一个节点
+   *  rootNode: 当前节点
+   */ 
+  function preFindNext(rootNode) {
+    // 根节点
+    if(!rootNode.parent) {
+      return {
+        data: null
+      };
     }
+    // 自身为左节点(已访问)
+    if(rootNode.parent.left === rootNode) {
+      return rootNode.parent.right;
+    }
+    // 自身为右节点
+    else {
+      return preFindNext(rootNode.parent);
+    }
+  
+  }
+
+  /** inorder 寻找下一个节点
+   *  rootNode: 当前节点
+   */ 
+  function inFindNext(rootNode) {
+    // 根节点
+    if(!rootNode.parent) {
+      return rootNode.right;
+    }
+    // 左节点
+    if(rootNode === rootNode.parent.left) {
+      return rootNode.parent;
+    }
+    // 右节点
+    else {
+      return inFindNext(rootNode.parent);
+    }
+  }
+
+  /** 利用DOM结构初始化树的值 
+   *  targetNode: 根节点
+   *  data: DOM值
+   */
+  function init(targetNode, data) {
+    // 传进来的数据非节点
+    if(!data) {
+      return null;
+    }
+    targetNode.data = data;
+    var dataArr = data.children;
+    targetNode.left = new node(dataArr[0], null, null, targetNode);
+    init(targetNode.left, dataArr[0]);
+    targetNode.right = new node(dataArr[1], null, null, targetNode);
+    init(targetNode.right, dataArr[1]);
+
   };
 
-  // 动画效果
-  function animation() {
+  /** 动画效果 
+   *  domArr: 遍历后的节点数组
+   *  interval: 动画每帧间隔时间
+   */
+  function animation(domArr, interval) {
+    var slip = 0;
+    interval = interval || 500;
+    // 插入动画
+    for(var i = 0; i < domArr.length; i ++) {
+      slip += interval;
+      // 利用闭包进行循环
+      (function(i, slip) {
+        setTimeout(function() {
+          if(i >= 1) {
+            domArr[i - 1].className = domArr[i - 1].className.replace("active", "");
+          }
+          domArr[i].className += " active";
+        }, slip)
+      })(i, slip);
+      // 动画结束
+      if(i == (domArr.length - 1)) {
+        slip += interval;
+        (function(i, slip) {
+          setTimeout(function() {
+            domArr[i].className = domArr[i].className.replace("active", "");
+          }, slip)
+        })(i, slip);
+      }
+    }
+  
+  };
 
-  }
+  /** 遍历方法
+   *  type: 遍历类型
+   *  前序遍历
+   *  中序遍历
+   *  后序遍历
+   */
+  tree.prototype.traverse = function(type) {
+    var rootNode = this.root,
+      resultArr = [];
+
+    // 根据类型遍历
+    switch(type) {
+      case "preorder":
+        while(!!rootNode.data) {
+          // 根左右
+          resultArr.push(rootNode.data);
+          // 叶子节点
+          if(!rootNode.left.data || !rootNode.right.data) {
+            // 判断当前节点是左节点还是右节点
+            rootNode = preFindNext(rootNode);
+          }
+          else {
+            rootNode = rootNode.left || rootNode.right;
+          }
+        }
+        console.info("先序遍历");
+        break;
+      case "inorder":
+        // 现寻找到起始点
+        while(!!rootNode.left) {
+          rootNode = rootNode.left;
+        }
+        while(!!rootNode.data) {
+          // 左根右
+          resultArr.push(rootNode.data);
+          rootNode = inFindNext(rootNode);
+          //resultArr.push(rootNode.parent.data);
+          //resultArr.push(rootNode.parent.right.data);
+        }
+        console.info("中序遍历");
+        break;
+      case "postorder":
+        console.info("后序遍历");
+        break;
+    }
+
+    this.animation(resultArr, 500);
+    // 返回排序遍历后的节点数组. 
+    return resultArr;
+
+  };
+
+  // 页面事件委托
+  document.addEventListener("click", function(evt) {
+    var targetID = evt.target.id,
+      target = document.getElementById("bt"),
+      pageTree = new tree(target);
+    
+    // 遍历树节点  
+    pageTree.traverse(targetID);
+
+  });
 </script>
 </body>
 </html>
