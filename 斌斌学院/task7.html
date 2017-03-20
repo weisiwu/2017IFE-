@@ -108,40 +108,58 @@
   /** preorder 寻找下一个节点
    *  rootNode: 当前节点
    */ 
-  function preFindNext(rootNode) {
-    // 根节点
-    if(!rootNode.parent) {
-      return {
-        data: null
-      };
-    }
-    // 自身为左节点(已访问)
-    if(rootNode.parent.left === rootNode) {
-      return rootNode.parent.right;
-    }
-    // 自身为右节点
-    else {
-      return preFindNext(rootNode.parent);
-    }
+  // function preFindNext(rootNode) {
+  //   // 根节点
+  //   if(!rootNode.parent) {
+  //     return {
+  //       data: null
+  //     };
+  //   }
+  //   // 自身为左节点(已访问)
+  //   if(rootNode.parent.left === rootNode) {
+  //     return rootNode.parent.right;
+  //   }
+  //   // 自身为右节点
+  //   else {
+  //     return preFindNext(rootNode.parent);
+  //   }
   
+  // }
+  /** preorder 后序遍历
+   *  rootNode: 当前节点
+   */ 
+  function preOrder(rootNode, resultArr) {
+    // 如果为空,则返回
+    if(!rootNode.data) {return;}
+    resultArr.push(rootNode.data);
+    preOrder(rootNode.left, resultArr);
+    preOrder(rootNode.right, resultArr);
+    console.log(resultArr);
   }
+
 
   /** inorder 寻找下一个节点
    *  rootNode: 当前节点
    */ 
-  function inFindNext(rootNode) {
-    // 根节点
-    if(!rootNode.parent) {
-      return rootNode.right;
-    }
-    // 左节点
-    if(rootNode === rootNode.parent.left) {
-      return rootNode.parent;
-    }
-    // 右节点
-    else {
-      return inFindNext(rootNode.parent);
-    }
+  function inOrder(rootNode, resultArr) {
+    // 如果为空,则返回
+    if(!rootNode.data) {return;}
+    inOrder(rootNode.left, resultArr);
+    resultArr.push(rootNode.data);
+    inOrder(rootNode.right, resultArr);
+    console.log(resultArr);
+  }
+
+  /** postorder 后序遍历
+   *  rootNode: 当前节点
+   */ 
+  function postOrder(rootNode, resultArr) {
+    // 如果为空,则返回
+    if(!rootNode.data) {return;}
+    postOrder(rootNode.left, resultArr);
+    postOrder(rootNode.right, resultArr);
+    resultArr.push(rootNode.data);
+    console.log(resultArr);
   }
 
   /** 利用DOM结构初始化树的值 
@@ -207,36 +225,14 @@
     // 根据类型遍历
     switch(type) {
       case "preorder":
-        while(!!rootNode.data) {
-          // 根左右
-          resultArr.push(rootNode.data);
-          // 叶子节点
-          if(!rootNode.left.data || !rootNode.right.data) {
-            // 判断当前节点是左节点还是右节点
-            rootNode = preFindNext(rootNode);
-          }
-          else {
-            rootNode = rootNode.left || rootNode.right;
-          }
-        }
-        console.info("先序遍历");
+        preOrder(rootNode, resultArr);
         break;
       case "inorder":
-        // 现寻找到起始点
-        while(!!rootNode.left) {
-          rootNode = rootNode.left;
-        }
-        while(!!rootNode.data) {
-          // 左根右
-          resultArr.push(rootNode.data);
-          rootNode = inFindNext(rootNode);
-          //resultArr.push(rootNode.parent.data);
-          //resultArr.push(rootNode.parent.right.data);
-        }
-        console.info("中序遍历");
+        // 中序遍历
+        inOrder(rootNode, resultArr);
         break;
       case "postorder":
-        console.info("后序遍历");
+        postOrder(rootNode, resultArr);
         break;
     }
 
