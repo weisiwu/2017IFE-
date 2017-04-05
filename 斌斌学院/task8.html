@@ -12,19 +12,28 @@
         padding: 20px 10px;
         border: 1px solid #000;
         float: left;
-        margin: 0 2.5%;
         box-sizing: border-box;
       }
-      div.active {
+      #bt span {
+        float: left;
+      }
+      div.active,
+      div.matchDiv div.active {
         background: red;
       }
-      div.active div {
+      div.active.matchDiv {
+        background: pink;
+      }
+      div.active div,
+      div.active.matchDiv div,
+      div.matchDiv div {
         background: #fff;
       }
       .center {
         width: 500px;
         margin: 0 auto;
         margin-top: 20px;
+        border: none;
         float: none;
         padding: 0;
         overflow: hidden;
@@ -33,8 +42,13 @@
         width: 100px;
         height: 50px;
         float: left;
-        margin: 20px auto;
-        margin-left: 200px;
+        cursor: pointer;
+      }
+      .center input {
+        width: 150px;
+        height: 30px;
+        float: left;
+        margin: 10px 50px; 
       }
       .foot {
         position: absolute;
@@ -49,14 +63,16 @@
 <!-- 遍历按钮 -->
 <div class="center">
   <button id="order">遍历</button>
+  <input type="text" id="queryStr" name="queryStr" value="">
+  <button id="queryBtn">查询</button>
 </div>
 <!-- 二叉树页面结构 -->
 <div id="bt" class="foot">
-  super
+  <span>super</span>
   <div>
-    car
+    <span>car</span>
     <div>
-      apple
+      <span>apple</span>
       <div>pear</div>
       <div>pig</div>
       <div>cola</div>
@@ -71,17 +87,17 @@
     </div>
   </div>
   <div>
-    note
+    <span>note</span>
     <div>
-      human
+      <span>human</span>
       <div>code</div>
       <div>operate</div>
       <div>man</div>
     </div>
     <div>
-      program
+      <span>program</span>
       <div>
-        element
+        <span>element</span>
         <div>cat</div>
       </div>
       <div>
@@ -113,21 +129,37 @@
    */
   function tree(data) {
     // 初始化根节点
-    this.root = new node(data, null, "supper", null);
+    this.root = new node(data, null, "super", null);
     this.animation = animation;
     // 通过数据来填充返回值
     init(this.root, data);
   }
 
-  /** preorder 后序遍历
+  /** Order 生成遍历结果
    *  rootNode: 当前节点
    */ 
-  function Order(rootNode, resultArr) {
+  function Order(rootNode, resultArr, text) {
     // 如果为空,则返回
     if(!rootNode.data) {return;}
+    if(rootNode.text == text && !!text) {
+      rootNode.data.className = rootNode.data.className.replace("matchDiv", "");
+      rootNode.data.className += " matchDiv";
+    }
+    rootNode.data.style.background = "";
+    // 装入根节点
     resultArr.push(rootNode.data);
-    //Order(rootNode.left, resultArr);
-    //Order(rootNode.right, resultArr);
+    // 深度优先遍历
+    var childrenNodes = rootNode.children;
+    for(var i = 0; i < childrenNodes.length; i ++) {
+      // 到达底部
+      if(childrenNodes[i].children == null) {
+        resultArr.push(childrenNodes[i].data);
+      }
+      else {
+        Order(childrenNodes[i], resultArr, text);
+      }
+    }
+
   }
 
   /** 利用DOM结构初始化树的值 
@@ -135,17 +167,33 @@
    *  data: DOM值
    */
   function init(targetNode, data) {
-    // 传进来的数据非节点
+    // 传进来的数据为空
     if(!data) {
       return null;
     }
-    targetNode.data = data;
-    var dataArr = data.children;
-    targetNode.left = new node(dataArr[0], null, targetNode);
-    init(targetNode.left, dataArr[0]);
-    targetNode.right = new node(dataArr[1], null, targetNode);
-    init(targetNode.right, dataArr[1]);
-
+    //, children, parent
+    var dataArr = [];
+    // 去除非DIV子节点
+    for(var i = 0; i < data.children.length; i ++) {
+      if(data.children[i].tagName == "DIV" || data.children[i].tagName == "div") {
+        // 初始化节点文字
+        if(!data.children[i].children[0]) {
+          var newItem = new node(data.children[i], null, data.children[i].innerText, targetNode);
+        }
+        else {
+          if(data.children[i].children[0].tagName == "SPAN") {
+            var newItem = new node(data.children[i], null, data.children[i].children[0].innerText, targetNode);
+          }
+          else {
+            var newItem = new node(data.children[i], null, null, targetNode);
+          }
+        }
+        init(newItem, data.children[i]);
+        dataArr.push(newItem);
+      }
+    }
+    // 初始化根节点的子节点
+    targetNode.children = dataArr;
   };
 
   /** 动画效果 
@@ -163,6 +211,9 @@
         setTimeout(function() {
           if(i >= 1) {
             domArr[i - 1].className = domArr[i - 1].className.replace("active", "");
+          }
+          if(domArr[i].className.indexOf("matchDiv") >= 0) {
+            document.querySelectorAll(".matchDiv")[0].style.background = "pink";
           }
           domArr[i].className += " active";
         }, slip)
@@ -182,32 +233,27 @@
         })(i, slip);
       }
     }
-  
   };
 
   /** 遍历方法
-   *  type: 遍历类型
-   *  前序遍历
-   *  中序遍历
-   *  后序遍历
    */
-  tree.prototype.traverse = function(type) {
+  tree.prototype.traverse = function(queryStr) {
     var rootNode = this.root,
       resultArr = [];
 
-    // 在某种遍历进行中,阻止其他遍历
+    // 在某种遍历进行中,阻止其他操作
     var btnList = document.getElementsByTagName("button");
     for(var i = 0; i < btnList.length; i ++) {
       btnList[i].setAttribute("disabled", "true");
     }
-
-    // 根据类型遍历
-    switch(type) {
-      case "order":
-        Order(rootNode, resultArr);
-        break;
+    // 生成遍历结果
+    if(!!queryStr) {
+      Order(rootNode, resultArr, queryStr);
     }
-
+    else {
+      Order(rootNode, resultArr); 
+    }
+    // 添加动画效果
     this.animation(resultArr, 500);
     // 返回排序遍历后的节点数组. 
     return resultArr;
@@ -216,14 +262,23 @@
 
   // 页面事件委托
   document.addEventListener("click", function(evt) {
+    // 点击初始化树
     var targetID = evt.target.id,
       target = document.getElementById("bt"),
       pageTree = new tree(target);
     
-    if(targetID != "order") {return;}
-
-    // 遍历树节点  
-    pageTree.traverse();
+    switch(targetID) {
+      case "queryBtn": 
+        var name = document.getElementById("queryStr").value;
+        pageTree.traverse(name);
+        break;
+      case "order": 
+        // 遍历树节点  
+        pageTree.traverse();
+        break;
+      default: 
+        return;
+    }
 
   });
 </script>
