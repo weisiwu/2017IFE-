@@ -1,0 +1,329 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>task 09</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        padding: 20px 10px;
+        border: 1px solid #000;
+        float: left;
+        box-sizing: border-box;
+        cursor: pointer;
+      }
+      #bt span {
+        float: left;
+      }
+      div.active,
+      div.matchDiv div.active {
+        background: red;
+      }
+      div.active.matchDiv {
+        background: pink;
+      }
+      div.active div,
+      div.active.matchDiv div,
+      div.matchDiv div {
+        background: #fff;
+      }
+      div.clicked {
+        background: gray;
+      }
+      div.clicked > div {
+        background: #fff;
+      }
+      .center {
+        width: 1000px;
+        margin: 0 auto;
+        margin-top: 20px;
+        border: none;
+        float: none;
+        padding: 0;
+        overflow: hidden;
+      }
+      .center button {
+        width: 100px;
+        height: 50px;
+        float: left;
+        cursor: pointer;
+        margin-left: 20px;
+      }
+      .center input {
+        width: 150px;
+        height: 30px;
+        float: left;
+        margin: 10px 50px; 
+      }
+      .foot {
+        position: absolute;
+        top: 20%;
+        margin: 0;
+        width: 100%;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+<body>
+<!-- 遍历按钮 -->
+<div id="controlBar" class="center">
+  <button id="order">遍历</button>
+  <button id="delBtn">删除</button>
+  <input type="text" id="queryStr" name="queryStr" value=""  placeholder="查询内容">
+  <button id="queryBtn">查询</button>
+  <input type="text" id="addStr" name="addStr" value="" placeholder="节点内容">
+  <button id="addBtn">添加</button>
+</div>
+<!-- 二叉树页面结构 -->
+<div id="bt" class="foot">
+  <span>super</span>
+  <div>
+    <span>car</span>
+    <div>
+      <span>apple</span>
+      <div>pear</div>
+      <div>pig</div>
+      <div>cola</div>
+      <div>succor</div>
+    </div>
+    <div>
+      phone
+    </div>
+    <div>
+      <div>book</div>
+      <div>school</div>
+    </div>
+  </div>
+  <div>
+    <span>note</span>
+    <div>
+      <span>human</span>
+      <div>code</div>
+      <div>operate</div>
+      <div>man</div>
+    </div>
+    <div>
+      <span>program</span>
+      <div>
+        <span>element</span>
+        <div>cat</div>
+      </div>
+      <div>
+        grass
+      </div>
+    </div>
+  </div>
+  <div>fish</div>
+</div>
+
+<script type="text/javascript">
+  /**
+   * 节点类
+   * data: 存储多叉树信息的DOM根节点
+   * children: 节点子节点
+   * text: 节点文字
+   * parent: 节点父节点
+   */
+  function node(data, children, text, parent) {
+    // 初始化属性
+    this.data = data;
+    this.text = text;
+    this.children = children;
+    this.parent = parent;
+  }
+
+  /** 树类
+   *  data: DOM值
+   */
+  function tree(data) {
+    // 初始化根节点
+    this.root = new node(data, null, "super", null);
+    this.animation = animation;
+    // 通过数据来填充返回值
+    init(this.root, data);
+  }
+
+  /** Order 生成遍历结果
+   *  rootNode: 当前节点
+   */ 
+  function Order(rootNode, resultArr, text) {
+    // 如果为空,则返回
+    if(!rootNode.data) {return;}
+    if(rootNode.text == text && !!text) {
+      rootNode.data.className = rootNode.data.className.replace("matchDiv", "");
+      rootNode.data.className += " matchDiv";
+    }
+    rootNode.data.className = rootNode.data.className.replace("clicked", "");
+    rootNode.data.style.background = "";
+    // 装入根节点
+    resultArr.push(rootNode.data);
+    // 深度优先遍历
+    var childrenNodes = rootNode.children;
+    for(var i = 0; i < childrenNodes.length; i ++) {
+      // 到达底部
+      if(childrenNodes[i].children == null) {
+        resultArr.push(childrenNodes[i].data);
+      }
+      else {
+        Order(childrenNodes[i], resultArr, text);
+      }
+    }
+
+  }
+
+  /** 利用DOM结构初始化树的值 
+   *  targetNode: 根节点
+   *  data: DOM值
+   */
+  function init(targetNode, data) {
+    // 传进来的数据为空
+    if(!data) {
+      return null;
+    }
+    //, children, parent
+    var dataArr = [];
+    // 去除非DIV子节点
+    for(var i = 0; i < data.children.length; i ++) {
+      if(data.children[i].tagName == "DIV" || data.children[i].tagName == "div") {
+        // 初始化节点文字
+        if(!data.children[i].children[0]) {
+          var newItem = new node(data.children[i], null, data.children[i].innerText, targetNode);
+        }
+        else {
+          if(data.children[i].children[0].tagName == "SPAN") {
+            var newItem = new node(data.children[i], null, data.children[i].children[0].innerText, targetNode);
+          }
+          else {
+            var newItem = new node(data.children[i], null, null, targetNode);
+          }
+        }
+        init(newItem, data.children[i]);
+        dataArr.push(newItem);
+      }
+    }
+    // 初始化根节点的子节点
+    targetNode.children = dataArr;
+  };
+
+  /** 动画效果 
+   *  domArr: 遍历后的节点数组
+   *  interval: 动画每帧间隔时间
+   */
+  function animation(domArr, interval) {
+    var slip = 0;
+    interval = interval || 500;
+    // 插入动画
+    for(var i = 0; i < domArr.length; i ++) {
+      slip += interval;
+      // 利用闭包进行循环
+      (function(i, slip) {
+        setTimeout(function() {
+          if(i >= 1) {
+            domArr[i - 1].className = domArr[i - 1].className.replace("active", "");
+          }
+          if(domArr[i].className.indexOf("matchDiv") >= 0) {
+            domArr[i].style.background = "pink";
+          }
+          domArr[i].className += " active";
+        }, slip)
+      })(i, slip);
+      // 动画结束
+      if(i == (domArr.length - 1)) {
+        slip += interval;
+        (function(i, slip) {
+          setTimeout(function() {
+            domArr[i].className = domArr[i].className.replace("active", "");
+            // 解除阻止
+            var btnList = document.getElementsByTagName("button");
+            for(var j = 0; j < btnList.length; j ++) {
+              btnList[j].removeAttribute("disabled");
+            }
+          }, slip)
+        })(i, slip);
+      }
+    }
+  };
+
+  /** 遍历方法
+   */
+  tree.prototype.traverse = function(queryStr) {
+    var rootNode = this.root,
+      resultArr = [];
+
+    // 在某种遍历进行中,阻止其他操作
+    var btnList = document.getElementsByTagName("button");
+    for(var i = 0; i < btnList.length; i ++) {
+      btnList[i].setAttribute("disabled", "true");
+    }
+    // 生成遍历结果
+    if(!!queryStr) {
+      Order(rootNode, resultArr, queryStr);
+    }
+    else {
+      Order(rootNode, resultArr); 
+    }
+    // 添加动画效果
+    this.animation(resultArr, 500);
+    // 返回排序遍历后的节点数组. 
+    return resultArr;
+
+  };
+
+  // 页面事件委托
+  document.addEventListener("click", function(evt) {
+    // 点击初始化树
+    var targetID = evt.target.id,
+      target = document.getElementById("bt"),
+      pageTree = new tree(target);
+
+    switch(targetID) {
+      case "queryBtn": 
+        var name = document.getElementById("queryStr").value;
+        pageTree.traverse(name);
+        break;
+      case "order": 
+        // 遍历树节点  
+        pageTree.traverse();
+        break;
+      case "delBtn": 
+        if(document.querySelectorAll(".clicked").length <= 0) {
+          alert("没有选中节点!");
+          return;
+        }
+        for(; document.querySelectorAll(".clicked").length > 0;) {
+          document.querySelectorAll(".clicked")[0].remove();
+        }
+        break;
+      case "addBtn":
+        if(document.querySelectorAll(".clicked").length <= 0) {
+          alert("没有选中节点!");
+          return;
+        }
+        var newTxt = document.getElementById("addStr").value;
+        if(!!newTxt) {
+          var newNode = document.createElement("div");
+          var textNode = document.createElement("span");
+          textNode.innerText = newTxt;
+          newNode.appendChild(textNode);
+        }
+        document.querySelectorAll(".clicked")[0].appendChild(newNode);
+        break;
+      case "controlBar":
+        break;
+      default:
+        // 添加标示
+        if(evt.target.tagName == "DIV") {
+          for(; document.querySelectorAll(".clicked").length > 0;) {
+            document.querySelectorAll(".clicked")[0].className = document.querySelectorAll(".clicked")[0].className.replace("clicked", "");
+          }
+          evt.target.className += " clicked";
+        } 
+    }
+
+  });
+</script>
+</body>
+</html>
