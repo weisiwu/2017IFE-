@@ -1,0 +1,128 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>task 01</title>
+    <style type="text/css">
+    	.field {
+    		position: relative;
+    		overflow: hidden;
+    		padding: 10px 0px;
+    		margin: 0 auto;
+    		height: 80px;
+    	}
+    	.fieldTxt {
+    		float: left;
+    		height: 50px;
+    		width: 150px;
+    		text-align: center;
+    		font-weight: bold;
+    		font-size: 20px;
+    		line-height: 50px;
+    	}
+    	.fieldInput {
+    		float: left;
+    		height: 50px;
+    		width: 500px;
+    		padding: 0px;
+    		text-indent: 15px;
+    		margin: 0px;
+    		margin-right: 20px;
+    		border: 1px solid #ccc;
+    		border-radius: 10px;
+    	}
+    	.fieldBtn {
+    		float: left;
+    		width: 200px;
+    		height: 50px;
+    		border-radius: 10px;
+    		background: #2f79ba;
+    		color: #fff;
+    		font-size: 20px;
+    		line-height: 50px;
+    		border: none;
+    		cursor: pointer;
+    	}
+    	.info {
+    		height: 25px;
+    		line-height: 25px;
+    		margin-left: 150px;
+    		color: #ccc;
+    		font-size: 20px;
+    		position: absolute;
+    		top: 70px;
+    	}
+    	.error .info {
+    		color: #de0012;
+    	}
+    	.error .fieldInput {
+    		border: 2px solid #de0012;
+    	}
+    	.success .info {
+    		color: #82c26e;
+    	}
+    	.success .fieldInput {
+    		border: 2px solid #82c26e;
+    	}
+    </style>
+  </head>
+<body>
+	<!-- 表格主体 -->
+	<form id="form" action="javascript:void(0);" method="POST">
+		<!-- 字段一 -->
+		<div class="field">
+			<label for="fieldA" class="fieldTxt">名称</label>
+			<input type="text" name="fieldA" id="fieldA" class="fieldInput">
+			<button class="fieldBtn" id="fieldABtn">验证</button>
+			<div class="info" id="fieldAInfo">必填,长度为4-16个字符</div>
+		</div>
+	</form>
+	<!-- 校验JS -->
+	<script type="text/javascript">
+		// 绑定事件
+		document.addEventListener("click", function(evt) {
+			if(evt.target.id == "fieldABtn") {
+				console.log("dd")
+				// 初始化对象
+				var infoDom = document.getElementById("fieldAInfo"),
+					inputVal = document.getElementById("fieldA").value;
+				// 校验数据
+				checkVal(inputVal, infoDom);
+			}
+		});
+		/** 校验函数
+		 *  @inputVal: 将检验的值
+		 *  @infoDom: 显示校验结果的节点
+		 */
+		function checkVal(inputVal, infoDom) {
+			var rootNode = infoDom.parentElement;
+			// 清空状态
+			rootNode.className = rootNode.className.replace("error", "");
+			rootNode.className = rootNode.className.replace("success", "");
+			// 值为空
+			if(!inputVal) {
+				infoDom.innerHTML = "姓名不能为空";
+				rootNode.className += " error";
+				return;
+			}
+			// 计算长度
+			var totalLen = inputVal.length,
+				wordArr = inputVal.split("");
+			for(var i = 0; i < wordArr.length; i ++) {
+				if(/[\u4E00-\u9FA5]/.test(wordArr[i])) {
+					totalLen += 1;
+				}
+			}
+			// 校验格式
+			if(totalLen <= 16 && totalLen >= 4) {
+				infoDom.innerHTML = "名称格式正确";
+				rootNode.className += " success";
+			}
+			else {
+				infoDom.innerHTML = "长度为4-16个字符";
+				rootNode.className += " error";	
+			}
+		}
+	</script>
+</body>
+</html>
