@@ -1,0 +1,223 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>task 02</title>
+    <style type="text/css">
+    	.field {
+    		position: relative;
+    		overflow: hidden;
+    		padding: 10px 0px;
+    		margin: 0 auto;
+    		height: 80px;
+    	}
+    	.fieldTxt {
+    		float: left;
+    		height: 50px;
+    		width: 150px;
+    		text-align: center;
+    		font-weight: bold;
+    		font-size: 20px;
+    		line-height: 50px;
+    	}
+    	.fieldInput {
+    		float: left;
+    		height: 50px;
+    		width: 500px;
+    		padding: 0px;
+    		text-indent: 15px;
+    		margin: 0px;
+    		margin-right: 20px;
+    		border: 1px solid #ccc;
+    		border-radius: 10px;
+    	}
+    	.fieldBtn {
+    		float: left;
+    		width: 200px;
+    		height: 50px;
+            margin-left: 450px;
+    		border-radius: 10px;
+    		background: #2f79ba;
+    		color: #fff;
+    		font-size: 20px;
+    		line-height: 50px;
+    		border: none;
+    		cursor: pointer;
+    	}
+    	.info {
+    		height: 25px;
+    		line-height: 25px;
+    		margin-left: 150px;
+    		color: #ccc;
+    		font-size: 20px;
+    		position: absolute;
+    		top: 70px;
+    	}
+        .hide {
+            display: none;
+        }
+    	.error .info {
+    		color: #de0012;
+    	}
+    	.error .fieldInput {
+    		border: 2px solid #de0012;
+    	}
+    	.success .info {
+    		color: #82c26e;
+    	}
+    	.success .fieldInput {
+    		border: 2px solid #82c26e;
+    	}
+    </style>
+  </head>
+<body>
+	<!-- 表格主体 -->
+	<form id="form" action="javascript:void(0);" method="POST">
+		<!-- 字段一 -->
+		<div class="field">
+			<label for="fieldA" class="fieldTxt">名称</label>
+			<input type="text" data-index=1 name="fieldA" id="fieldA" class="fieldInput">
+			<div class="info hide" id="fieldAInfo">必填,长度为4-16个字符</div>
+		</div>
+        <!-- 字段二 -->
+        <div class="field">
+            <label for="fieldB" class="fieldTxt">密码</label>
+            <input type="password" data-index=2 name="fieldB" id="fieldB" class="fieldInput">
+            <div class="info hide" id="fieldBInfo">必填,长度为4-16个字符</div>
+        </div>
+        <!-- 字段三 -->
+        <div class="field">
+            <label for="fieldC" class="fieldTxt">密码确认</label>
+            <input type="password" data-index=3 name="fieldC" id="fieldC" class="fieldInput">
+            <div class="info hide" id="fieldCInfo">必填,需一致</div>
+        </div>
+        <!-- 字段四 -->
+        <div class="field">
+            <label for="fieldD" class="fieldTxt">邮箱</label>
+            <input type="text" data-index=4 name="fieldD" id="fieldD" class="fieldInput">
+            <div class="info hide" id="fieldDInfo">必填,为可用邮箱</div>
+        </div>
+        <!-- 字段五 -->
+        <div class="field">
+            <label for="fieldE" class="fieldTxt">手机</label>
+            <input type="text" data-index=5 name="fieldE" id="fieldE" class="fieldInput">
+            <div class="info hide" id="fieldEInfo">必填,长度为11位数字</div>
+        </div>
+        <!-- 验证按钮 -->
+        <button class="fieldBtn" id="fieldBtn">验证</button>
+	</form>
+	<!-- 校验JS -->
+	<script type="text/javascript">
+		// 绑定点击事件
+		document.addEventListener("click", function(evt) {
+            if(evt.target.id == "fieldBtn") {
+                var pass = true,
+                    inputList = document.querySelectorAll("input");
+                for(var i = 0; i < inputList.length; i ++) {
+                    checkVal(inputList[i].value, inputList[i].parentElement.querySelector(".info"), i + 1 + "");
+                    if(inputList[i].parentElement.className.indexOf("success") < 0) {
+                        pass = false;
+                    }
+                }
+                // 通过
+                if(pass) {
+                    alert("通过!");
+                }
+                else {
+                    alert("输入有误!");
+                }
+            }
+		});
+        // 给input元素绑定事件
+        var inputDom = document.querySelectorAll("input");
+        for(var i = 0; i < inputDom.length; i ++) {
+            // 绑定获取焦点事件
+            inputDom[i].onfocus = function() {
+                // 初始化变量
+                var self = this, 
+                    curVal = self.value,
+                    infoDom = self.parentElement.querySelector(".info"),
+                    parentDom = self.parentElement;
+                // 获取焦点显示提示
+                infoDom.className = infoDom.className.replace("hide", "");
+            };
+            // 绑定失去焦点事件
+            // 绑定值改变事件
+            inputDom[i].onblur = inputDom[i].onchange = function(evt) {
+                checkVal(this.value, this.parentElement.querySelector(".info"), this.getAttribute("data-index"));
+            }
+        }
+		/** 校验函数
+		 *  @inputVal: 将检验的值
+		 *  @infoDom: 显示校验结果的节点
+		 *  @ruler: 校验规则
+         */
+		function checkVal(inputVal, infoDom, ruler) {
+			var rootNode = infoDom.parentElement;
+
+			// 清空状态
+			rootNode.className = rootNode.className.replace("error", "");
+			rootNode.className = rootNode.className.replace("success", "");
+			// 值为空
+			if(!inputVal) {
+				infoDom.innerHTML = "值不能为空";
+				rootNode.className += " error";
+				return;
+			}
+            // 每项对应规则
+            switch(ruler) {
+                case "1":
+                case "2": 
+                    // 计算长度
+                    var totalLen = inputVal.length,
+                        wordArr = inputVal.split("");
+                    for(var i = 0; i < wordArr.length; i ++) {
+                        if(/[\u4E00-\u9FA5]/.test(wordArr[i])) {
+                            totalLen += 1;
+                        }
+                    }
+                    // 校验格式
+                    if(totalLen <= 16 && totalLen >= 4) {
+                        infoDom.innerHTML = "名称格式正确";
+                        rootNode.className += " success";
+                    }
+                    else {
+                        infoDom.innerHTML = "长度为4-16个字符";
+                        rootNode.className += " error"; 
+                    }
+                    break;
+                case "3": 
+                    if(inputVal == document.querySelector("#fieldB").value) {
+                        infoDom.innerHTML = "通过";
+                        rootNode.className += " success";
+                    }
+                    else {
+                        infoDom.innerHTML = "两次填写密码不一致";
+                        rootNode.className += " error"; 
+                    }
+                    break;
+                case "4": 
+                    if(/.{2,12}@.{1,7}/.test(inputVal)) {
+                        infoDom.innerHTML = "邮箱格式正确";
+                        rootNode.className += " success";
+                    }
+                    else {
+                        infoDom.innerHTML = "邮箱格式不正确";
+                        rootNode.className += " error"; 
+                    }
+                    break;
+                case "5": 
+                    if(/^[0-9]{11,11}$/.test(inputVal)) {
+                        infoDom.innerHTML = "手机号格式正确";
+                        rootNode.className += " success";
+                    }
+                    else {
+                        infoDom.innerHTML = "手机号格式不正确";
+                        rootNode.className += " error"; 
+                    }
+                    break;
+            }
+		}
+	</script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 - [小薇学院](#小薇学院)  
 - [斌斌学院](#斌斌学院)  
 - [耀耀学院](#耀耀学院)  
-- [ECharts & WebVR学院](#ECharts & WebVR学院)  
+- [ECharts & WebVR学院](#ECharts和WebVR学院)  
 - [百度糯米前端技术学院](#百度糯米前端技术学院)  
 
 ## 小薇学院
@@ -101,3 +101,10 @@
 
 ## 耀耀学院
 ### 任务1  
+
+### 任务二
+1. [如何监听input的focus/blur事件](http://www.w3school.com.cn/jsref/jsref_events.asp)
+
+## ECharts和WebVR学院  
+
+## 百度糯米前端技术学院  
