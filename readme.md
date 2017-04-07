@@ -101,8 +101,10 @@
 
 ## 耀耀学院
 ### 任务1  
+[预览地址](https://weisiwu.github.io/2017IFE-/%E8%80%80%E8%80%80%E5%AD%A6%E9%99%A2/task1.html)
 
 ### 任务二
+[预览地址](https://weisiwu.github.io/2017IFE-/%E8%80%80%E8%80%80%E5%AD%A6%E9%99%A2/task2.html)
 1. [如何监听input的focus/blur事件](http://www.w3school.com.cn/jsref/jsref_events.asp)
 
 ## ECharts和WebVR学院  
