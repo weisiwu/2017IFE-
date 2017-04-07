@@ -55,7 +55,8 @@
 ### 任务7
 [预览地址](https://weisiwu.github.io/2017IFE-/%E5%B0%8F%E8%96%87%E5%AD%A6%E9%99%A2/task7.html)  
 
-1. PSD 上的行间距是确实指两行的字轮廓的距离吗?  
+1. PSD 上的行间距是确实指两行的字轮廓的距离吗?
+1. [web与排版学上的字体问题](http://www.2008php.com/tx1970/0101/16686.html)
 3. [select/option 如何修改字体大小和样式?](https://www.zhihu.com/question/35976947)、[select2 github](https://github.com/select2/select2)  
 
 ### 任务8
@@ -102,10 +103,12 @@
 ## 耀耀学院
 ### 任务1  
 [预览地址](https://weisiwu.github.io/2017IFE-/%E8%80%80%E8%80%80%E5%AD%A6%E9%99%A2/task1.html)
+1. [该任务的一个优秀笔记](http://ife.baidu.com/note/detail/id/583)
 
 ### 任务二
 [预览地址](https://weisiwu.github.io/2017IFE-/%E8%80%80%E8%80%80%E5%AD%A6%E9%99%A2/task2.html)
 1. [如何监听input的focus/blur事件](http://www.w3school.com.cn/jsref/jsref_events.asp)
+1. [switch 使用的为全等判断](http://www.cnblogs.com/liangwei389/p/3836160.html)
 
 ## ECharts和WebVR学院  
 
