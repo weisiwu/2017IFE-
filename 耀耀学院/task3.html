@@ -1,0 +1,90 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>task 03</title>
+    <style type="text/css">
+        * {
+            text-align: center;
+        }
+        .container {
+            padding: 30px 0px;
+        }
+        label {
+            margin-right: 50px;
+        }
+        span {
+            margin-right: 20px;
+        }
+        #province {
+            width: 200px;
+            height: 30px;
+            border-radius: 5px; 
+        }
+        #school {
+            width: 250px;
+            height: 30px;
+            border-radius: 5px; 
+        }
+        #worker-line, #student-line {
+            display: none;
+        }
+        #comname {
+            width: 250px;
+            height: 30px;
+            border-radius: 5px; 
+            border: 1px solid #999;
+            outline: none;
+            text-align: left;
+            text-indent: 1rem;
+            margin-right: 170px;
+        }
+    </style>
+  </head>
+<body>
+	<!-- 联动表单 -->
+	<form id="form" action="javascript:void(0);" method="POST">
+        <!-- 在校生 -->
+        <input type="radio" name="status" id="student">
+        <label for="">在校生</label>
+        <!-- 非在校生 -->
+        <input type="radio" name="status" id="worker">
+        <label for="">非在校生</label>
+        <!-- 联动内容 -->
+        <div class="container">
+            <!-- 在校生 -->
+            <div id="student-line">
+                <span>学校</span>
+                <select id="province">
+                    <option cityid="01">北京</option>
+                    <option cityid="02">安徽</option>
+                    <option cityid="03">广州</option>
+                    <option cityid="04">辽宁</option>
+                </select>
+                <select id="school"></select>
+            </div>
+            <!-- 非在校生 -->
+            <div id="worker-line">
+                <span>就业单位</span>
+                <input type="text" id="comname">
+            </div>
+        </div>
+	</form>
+	<!-- 联动JS -->
+	<script type="text/javascript">
+        // 监听click事件
+        document.addEventListener("click", function(evt) {
+            var self = evt.target,
+                targetID = self.id;
+            switch(targetID) {
+                case "student":
+                    var showDom = document.getElementById("student-line").style.display = "block", hideDom = document.getElementById("worker-line").style.display = "hidden";
+                    break;
+                case "worker":
+                    var showDom = document.getElementById("worker-line").style.display = "block", hideDom = document.getElementById("student-line").style.display = "hidden";
+                    break;
+            }
+        });
+	</script>
+</body>
+</html>
