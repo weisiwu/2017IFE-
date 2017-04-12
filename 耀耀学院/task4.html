@@ -1,0 +1,306 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>task 04</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        input, button {
+            margin-top: 20px;
+        }
+        ul {
+            overflow: hidden;
+        }
+        li {
+            float: left;
+            height: 20px;
+            width: 50px;
+        }
+        li.grid {
+            height: 50px;
+            border: 1px solid #ccc;
+        }
+        .top ul {
+            position: relative;
+        }
+        .left li {
+            height: 50px;
+            width: 20px;
+            float: none;
+        }
+        .border {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+        .target {
+            position: relative;
+            background: red;
+            height: 50px;
+            width: 50px;
+        }
+        .target .front {
+            position: absolute;
+            background: blue;
+        }
+        .target .front.toTop {
+            top: 0;
+            left: 0;
+            height: 10px;
+            width: 50px;
+        }
+        .target .front.toBot {
+            bottom: 0;
+            left: 0;
+            height: 10px;
+            width: 50px;
+        }
+        .target .front.toLeft {
+            top: 0;
+            left: 0;
+            height: 50px;
+            width: 10px;
+        }
+        .target .front.toRight {
+            top: 0;
+            right: 0;
+            height: 50px;
+            width: 10px;
+        }
+    </style>
+  </head>
+<body>
+    <!-- 上 -->
+    <div class="top">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ul>
+    </div>
+    <!-- 左 -->
+    <div class="left">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ul>
+    </div>
+    <div class="border">
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+        </ul>
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+        </ul>
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+        </ul>
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+        </ul>
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+        </ul>
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+        </ul>
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+        </ul>
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+        </ul>
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+        </ul>
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid">
+                <div class="target" id="target">
+                    <div class="front toTop"></div>
+                </div>
+            </li>
+        </ul>
+        <input type="text" id="actionName" placeholder="GO">
+        <button id="action">执行</button>
+    </div>
+	<!-- 联动JS -->
+	<script type="text/javascript">
+        // 初始位置
+        var position = [9, 9],
+            direction = 0,
+            arrowDirect = [
+                "toTop",
+                "toLeft",
+                "toBot",
+                "toRight"
+            ];
+        // 监听click事件
+        document.addEventListener("click", function(evt) {
+            var self = evt.target,
+                targetID = self.id,
+                action = document.getElementById("actionName").value || "GO",
+                moveDom = document.getElementById("target").querySelector(".front");
+            if(targetID != "action") {
+                return;
+            }
+
+            switch(action) {
+                case "GO":
+                    moveFn(position, direction);
+                    break;
+                case "TUN LEF":
+                    direction = parseInt((direction + 1) > 3? 0: direction + 1);
+                    moveDom.className = "front ";
+                    moveDom.className += arrowDirect[direction];
+                    break;
+                case "TUN RIG":
+                    direction = parseInt((direction - 1) < 0? 3: direction - 1);
+                    moveDom.className = "front ";
+                    moveDom.className += arrowDirect[direction];
+                    break;
+                case "TUN BAC":
+                    direction = parseInt((direction + 2)%4);
+                    moveDom.className = "front ";
+                    moveDom.className += arrowDirect[direction];
+                    break;
+            }
+
+        });
+
+        // 移动函数
+        function moveFn(position, direction) {
+            var target = document.getElementById("target").outerHTML || '<div class="target" id="target"><div class="front toTop"></div></div>';
+            document.getElementById("target").remove();
+
+            switch(direction) {
+                case 0:
+                    // 上
+                    position[0] = (position[0] - 1 < 0) ? 0: position[0] - 1;
+                    break;
+                case 2:
+                    // 下
+                    position[0] = (position[0] + 1 >= 10) ? 9: position[0] + 1;
+                    break;
+                case 3:
+                    // 右
+                    position[1] = (position[1] + 1 >= 10) ? 9: position[1] + 1;
+                    break;
+                case 1:
+                    // 左
+                    position[1] = (position[1] - 1 < 0) ? 0: position[1] - 1;
+                    break;
+            }
+            document.querySelectorAll(".line")[position[0]].querySelectorAll(".grid")[position[1]].innerHTML = target;
+        }
+	</script>
+</body>
+</html>
