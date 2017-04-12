@@ -110,6 +110,10 @@
 1. [如何监听input的focus/blur事件](http://www.w3school.com.cn/jsref/jsref_events.asp)
 1. [switch 使用的为全等判断](http://www.cnblogs.com/liangwei389/p/3836160.html)
 
+### 任务三
+[预览地址](https://weisiwu.github.io/2017IFE-/%E8%80%80%E8%80%80%E5%AD%A6%E9%99%A2/task3.html)
+1. 利用原生的JavaScript来修改样式的话,如果做一个元素隐藏显示转换的话,那么设置其css为hidden/block,只能达到一次的效果,最好的方法是,想隐藏时,清空元素CSS.  
+
 ## ECharts和WebVR学院  
 
 ## 百度糯米前端技术学院  

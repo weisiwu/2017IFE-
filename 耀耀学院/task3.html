@@ -61,7 +61,11 @@
                     <option cityid="03">广州</option>
                     <option cityid="04">辽宁</option>
                 </select>
-                <select id="school"></select>
+                <select id="school">
+                    <option>北京大学一</option>
+                    <option>北京大学二</option>
+                    <option>北京大学三</option>
+                </select>
             </div>
             <!-- 非在校生 -->
             <div id="worker-line">
@@ -72,17 +76,39 @@
 	</form>
 	<!-- 联动JS -->
 	<script type="text/javascript">
+        var schoolObj = {
+            "01": ["北京大学一","北京大学二","北京大学三"],
+            "02": ["安徽大学一","安徽大学二","安徽大学三"],
+            "03": ["广州大学一","广州大学二","广州大学三"],
+            "04": ["辽宁大学一","辽宁大学二","辽宁大学三"]
+        };
+
         // 监听click事件
         document.addEventListener("click", function(evt) {
             var self = evt.target,
                 targetID = self.id;
             switch(targetID) {
                 case "student":
-                    var showDom = document.getElementById("student-line").style.display = "block", hideDom = document.getElementById("worker-line").style.display = "hidden";
+                    var showDom = document.getElementById("student-line").style.display = "block", hideDom = document.getElementById("worker-line").style.display = "";
                     break;
                 case "worker":
-                    var showDom = document.getElementById("worker-line").style.display = "block", hideDom = document.getElementById("student-line").style.display = "hidden";
+                    var showDom = document.getElementById("worker-line").style.display = "block", hideDom = document.getElementById("student-line").style.display = "";
                     break;
+            }
+        });
+
+        // 监听 change 事件
+        document.addEventListener("change", function(evt) {
+            var self = evt.target,
+                targetID = self.id;
+            
+            if(targetID == "province") {
+                var cityid = self.selectedOptions[0].getAttribute("cityid"),
+                    schoolList = document.getElementById("school");
+                schoolList.innerHTML = "";
+                schoolObj[cityid].map(function(evt) {
+                    schoolList.innerHTML += ("<option>" + evt + "</option>");
+                });
             }
         });
 	</script>
