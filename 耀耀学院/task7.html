@@ -1,0 +1,191 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>task 07</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        .table {
+            width: 500px;
+            margin: 0 auto;
+        }
+        ul {
+            width: 100%;
+            overflow: hidden;
+        }
+        ul.tr {
+            color: #fff;
+            font-weight: bold;
+            background: rgba(0, 0, 0, .5);
+        }
+        li {
+            position: relative;
+            float: left;
+            width: 20%;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-left: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+        ul li:nth-last-child(1) {
+            border-right: 1px solid #ccc;
+        }
+        .sortBig, .sortSmall {
+            position: absolute;
+            top: 6px;
+            right: 10px;
+            width: 9px;
+            height: 7px;
+            cursor: pointer;
+        }
+        .sortBig {
+            background-image: url(images/arrowTop.png);
+            background-repeat: no-repeat;
+        }
+        .sortSmall {
+            background-image: url(images/arrowBot.png);
+            background-repeat: no-repeat;   
+        }
+        .sortBig.active, .sortSmall.active {
+            background-color: red;
+        } 
+        .sortSmall {
+            top: 17px;
+        }
+    </style>
+  </head>
+<body>
+    <!-- 表格主体 -->
+    <div class="table" id="table"></div>
+    <!-- 排序列表生成函数 -->
+	<script type="text/javascript">
+        var tableData = {
+            cols: {
+                "name": "姓名",
+                "chinese": "语文",
+                "math": "数学",
+                "en": "英语",
+                "total": "总分"
+            },
+            data: [
+                {
+                    "name": "小明",
+                    "chinese": 80,
+                    "math": 90,
+                    "en": 70,
+                    "total": 240
+                },
+                {
+                    "name": "小红",
+                    "chinese": 90,
+                    "math": 60,
+                    "en": 90,
+                    "total": 240
+                },
+                {
+                    "name": "小亮",
+                    "chinese": 60,
+                    "math": 100,
+                    "en": 70,
+                    "total": 230
+                }
+            ]
+        };
+
+        function sortTable(res) {
+            var self = this;
+            // 渲染函数
+            this.render = function(res) {            
+                // 根据数据生成结构
+                var target = document.getElementById("table"),
+                    header = ['<ul class="tr">'], body = [], data = res.data,
+                    cols = res.cols;
+
+                // header 生成
+                for(var key in cols) {
+                    if(key == "name") {
+                        header.push('<li data-type="' + key 
+                            + '">' + cols[key] 
+                            + '</li>');
+                        continue;
+                    }
+                    header.push('<li data-type="' + key 
+                        + '">' + cols[key] 
+                        + '<span class="sortBig"></span><span class="sortSmall"></span></li>');
+                }
+                header.push('</ul>');
+                header = header.join("").replace(/,/igm, "");
+                // body 生成
+                for(var i = 0; i < data.length; i ++) {
+                    body.push('<ul class="th">');
+                    for(var key in data[i]) {
+                        body.push('<li>' + data[i][key] 
+                            + '</li>');
+                    }
+                    body.push("</ul>")
+                }
+                body = body.join("").replace(/,/igm, "");
+
+                target.innerHTML = "";
+                target.innerHTML = header + body;
+
+                // 开始绑定事件
+                var sortBtnA = document.querySelectorAll(".sortBig"),
+                    sortBtnB = document.querySelectorAll(".sortSmall");
+                sortBtnA = Array.prototype.slice.call(sortBtnA);
+                sortBtnB = Array.prototype.slice.call(sortBtnB);
+
+                // 依次绑定事件
+                sortBtnA.map(function(evt) {
+                    evt.removeEventListener("click", this.sortBig);
+                    evt.addEventListener("click", this.sortBig);
+                });
+                sortBtnB.map(function(evt) {
+                    evt.removeEventListener("click", this.sortSmall);
+                    evt.addEventListener("click", this.sortSmall);
+                });
+            };
+
+            // 排序方法
+            this.sortBig = function(evt) {
+                var type = evt.target.parentNode.getAttribute("data-type");
+                // 冒泡
+                for(var x = res.data.length - 1; x >= 0; x --) {
+                    for(var y = 0; y < x; y ++) {
+                        if(res.data[y][type] < res.data[y + 1][type]) {
+                            res.data[y] = [res.data[y + 1],res.data[y + 1] = res.data[y]][0];
+                        }
+                    }
+                }
+
+                self.render(res);
+            };
+            this.sortSmall = function(evt) {
+                console.log(evt.target)
+                var type = evt.target.parentNode.getAttribute("data-type");
+                for(var x = res.data.length - 1; x >= 0; x --) {
+                    for(var y = 0; y < x; y ++) {
+                        if(res.data[y][type] > res.data[y + 1][type]) {
+                            res.data[y] = [res.data[y + 1],res.data[y + 1] = res.data[y]][0];
+                        }
+                    }
+                }
+
+                self.render(res);
+            };
+            
+            // 初始化
+            self.render(res);
+
+        }
+
+        sortTable(tableData);
+	</script>
+</body>
+</html>

@@ -127,7 +127,11 @@
 [预览地址](https://weisiwu.github.io/2017IFE-/%E8%80%80%E8%80%80%E5%AD%A6%E9%99%A2/task6.html)  
 1. 看了一下任务描述,"有能力的同学可以实现浮出层的拖拽移动浮出窗口位置以及拖拽边缘来放大缩小浮出窗口的功能",这两个功能没有添加,在此备注一下.  
 1. 浮出层的窗口大小可以是一个默认固定值，也可以是随内容变化而自适应变化，也可以是通过接口参数进行调整，自行根据自己能力进行选择, 这点实现的是通过参数修改高度,[参考链接](http://www.cnblogs.com/pangguoming/p/5695184.html)  
-1. 如何判断程序的耦合性?  
+1. 如何分析程序的耦合度?  
+
+### 任务七
+[预览地址](https://weisiwu.github.io/2017IFE-/%E8%80%80%E8%80%80%E5%AD%A6%E9%99%A2/task7.html)  
+1. 只使用了冒泡排序,可以了解一下其他的[排序方法1](http://blog.csdn.net/skyandcode/article/details/8607819)、[排序方法2](http://www.cnblogs.com/xkfz007/archive/2012/07/01/2572017.html)  
 
 ## ECharts和WebVR学院  
 
