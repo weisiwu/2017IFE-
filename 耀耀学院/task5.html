@@ -1,0 +1,458 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>task 05</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        input, button {
+            margin-top: 20px;
+            height: 20px;
+        }
+        ul {
+            overflow: hidden;
+        }
+        li {
+            float: left;
+            height: 20px;
+            width: 50px;
+        }
+        li.grid {
+            height: 50px;
+            border: 1px solid #ccc;
+        }
+        .top ul {
+            position: relative;
+            margin-left: 20px;
+        }
+        .top li {
+            text-align: center;
+            line-height: 20px;
+            border: 1px solid #fff;
+        }
+        .left li {
+            line-height: 50px;
+            text-align: center;
+            height: 50px;
+            width: 20px;
+            border: 1px solid #fff;
+            float: none;
+        }
+        .border {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            width: 500px;
+            height: 500px;
+        }
+        .target {
+            position: absolute;
+            background: red;
+            height: 50px;
+            width: 50px;
+            right: 0px;
+            bottom: 0px;
+        }
+        .target .front {
+            position: absolute;
+            background: blue;
+            height: 10px;
+            width: 50px;
+        }
+        .toTopStatic {
+            height: 10px;
+            width: 50px;
+            top: 0px;
+            left: 0;
+        }
+        .target .front.toTop {
+            transition: all 1s;
+            height: 10px;
+            width: 50px;
+            top: 0px;
+            left: 0px;
+        }
+        @keyframes toTop {
+            from {
+            }
+            to {
+                height: 10px;
+                width: 50px;
+                top: 0px;
+                left: 0px;
+            }
+        }
+        .target .front.toBot {
+            transition: all 1s;
+            top: 40px;
+            left: 0;
+            height: 10px;
+            width: 50px;
+        }
+        @keyframes toBot {
+            from {
+            }
+            to {
+                top: 40px;
+                left: 0;
+                height: 10px;
+                width: 50px;
+            }
+        }
+        .target .front.toLeft {
+            transition: all 1s;
+            height: 50px;
+            width: 10px;
+            top: 0px;
+            left: 0px; 
+        }
+        @keyframes toLeft {
+            from {
+            }
+            to {
+                height: 50px;
+                width: 10px;
+                top: 0px;
+                left: 0px;
+            }
+        }
+        .target .front.toRight {
+            transition: all 1s;
+            top: 0;
+            left: 40px;
+            height: 50px;
+            width: 10px;
+        }
+        @keyframes toRight {
+            from {
+            }
+            to {
+                top: 0;
+                left: 40px;
+                height: 50px;
+                width: 10px;
+            }
+        }
+    </style>
+  </head>
+<body>
+    <!-- 上 -->
+    <div class="top">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ul>
+    </div>
+    <!-- 左 -->
+    <div class="left">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ul>
+    </div>
+    <div class="border">
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+        </ul>
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+        </ul>
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+        </ul>
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+        </ul>
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+        </ul>
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+        </ul>
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+        </ul>
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+        </ul>
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+        </ul>
+        <ul class="line">
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+            <li class="grid"></li>
+        </ul>
+        <div class="target" id="target">
+            <div class="front toTopStatic"></div>
+        </div>
+        <input type="text" id="actionName" placeholder="GO">
+        <button id="action">执行</button>
+    </div>
+	<!-- 联动JS -->
+	<script type="text/javascript">
+        // 初始位置
+        var position = [9, 9],
+            distance,
+            direction = 0,
+            arrowDirect = [
+                "toTop",
+                "toLeft",
+                "toBot",
+                "toRight"
+            ];
+        // 监听click事件
+        document.addEventListener("click", function(evt) {
+            var self = evt.target,
+                targetID = self.id,
+                action = document.getElementById("actionName").value || "GO",
+                moveDom = document.getElementById("target").querySelector(".front");
+            if(targetID != "action") {
+                return;
+            }
+
+            switch(action) {
+                case "GO":
+                    moveFn(position, direction);
+                    break;
+                case "TUN LEF":
+                    direction = parseInt((direction + 1) > 3? 0: direction + 1);
+                    moveDom.className = "front ";
+                    moveDom.className += arrowDirect[direction];
+                    break;
+                case "TUN RIG":
+                    direction = parseInt((direction - 1) < 0? 3: direction - 1);
+                    moveDom.className = "front ";
+                    moveDom.className += arrowDirect[direction];
+                    break;
+                case "TUN BAC":
+                    direction = parseInt((direction + 2)%4);
+                    moveDom.className = "front ";
+                    moveDom.className += arrowDirect[direction];
+                    break;
+                case "TRA LEF":
+                    direction = 1;
+                    moveFn(position, direction);
+                    break;
+                case "TRA TOP":
+                    direction = 0;
+                    moveFn(position, direction);
+                    break;
+                case "TRA RIG":
+                    direction = 3;
+                    moveFn(position, direction);
+                    break;
+                case "TRA BOT":
+                    direction = 2;
+                    moveFn(position, direction);
+                    break;
+                case "MOV LEF":
+                    direction = 1;
+                    moveDom.className = "front ";
+                    moveDom.className += arrowDirect[direction];
+                    moveFn(position, direction);
+                    break;
+                case "MOV TOP":
+                    direction = 0;
+                    moveDom.className = "front ";
+                    moveDom.className += arrowDirect[direction];
+                    moveFn(position, direction);
+                    break;
+                case "MOV RIG":
+                    direction = 3;
+                    moveDom.className = "front ";
+                    moveDom.className += arrowDirect[direction];
+                    moveFn(position, direction);
+                    break;
+                case "MOV BOT":
+                    direction = 2;
+                    moveDom.className = "front ";
+                    moveDom.className += arrowDirect[direction];
+                    moveFn(position, direction);
+                    break;
+            }
+
+        });
+
+        // 移动函数
+        function moveFn(position, direction) {
+            var distance = [0, 0], tmpPos;
+
+            switch(direction) {
+                case 0:
+                    // 上
+                    tmpPos = position[0];
+                    position[0] = (position[0] - 1 < 0) ? 0: position[0] - 1;
+                    distance[0] = tmpPos - position[0];
+                    break;
+                case 2:
+                    // 下
+                    tmpPos = position[0];
+                    position[0] = (position[0] + 1 >= 10) ? 9: position[0] + 1;
+                    distance[0] = tmpPos - position[0];
+                    break;
+                case 3:
+                    // 右
+                    tmpPos = position[1];
+                    position[1] = (position[1] + 1 >= 10) ? 9: position[1] + 1;
+                    distance[1] = tmpPos - position[1];
+                    break;
+                case 1:
+                    // 左
+                    tmpPos = position[1];
+                    position[1] = (position[1] - 1 < 0) ? 0: position[1] - 1;
+                    distance[1] = tmpPos - position[1];
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+            }
+            
+            window.distance = distance;
+            window.progress = 0;
+            requestAnimationFrame(ani);
+
+        }
+
+        /** 动画函数 */
+        // 时间预计: 16ms*50(约1s)
+        function ani() {
+            if(progress >= 50) {
+                progress = 0;
+                return;
+            }
+            progress ++;
+            var target = document.getElementById("target");
+            if(distance[0] != 0) {
+                target.style.bottom = (target.style.bottom ? parseInt(target.style.bottom) : 0) + distance[0] + "px";
+            }
+            else if(distance[1] != 0) {
+                target.style.right = (target.style.right ? parseInt(target.style.right): 0) + distance[1] + "px";
+            }
+            requestAnimationFrame(ani);
+        }
+	</script>
+</body>
+</html>

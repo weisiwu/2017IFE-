@@ -117,6 +117,12 @@
 ### 任务四
 [预览地址](https://weisiwu.github.io/2017IFE-/%E8%80%80%E8%80%80%E5%AD%A6%E9%99%A2/task4.html)
 
+### 任务五
+[预览地址](https://weisiwu.github.io/2017IFE-/%E8%80%80%E8%80%80%E5%AD%A6%E9%99%A2/task5.html)  
+1. css3 的 animation 实际上是不改变属性的真实状态的,但是 transition 可以, transiton可以以之前改变过的属性为起始点,进行下一次的简单动画.  
+详情可见本次的小方块旋转.  
+
+
 ## ECharts和WebVR学院  
 
 ## 百度糯米前端技术学院  
