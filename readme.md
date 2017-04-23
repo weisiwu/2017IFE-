@@ -132,7 +132,3 @@
 ### 任务七
 [预览地址](https://weisiwu.github.io/2017IFE-/%E8%80%80%E8%80%80%E5%AD%A6%E9%99%A2/task7.html)  
 1. 只使用了冒泡排序,可以了解一下其他的[排序方法1](http://blog.csdn.net/skyandcode/article/details/8607819)、[排序方法2](http://www.cnblogs.com/xkfz007/archive/2012/07/01/2572017.html)  
-
-## ECharts和WebVR学院  
-
-## 百度糯米前端技术学院  
